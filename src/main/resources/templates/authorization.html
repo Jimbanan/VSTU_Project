@@ -19,9 +19,9 @@
     <h1 style="font-size: 13px; color: var(--dim-gray)"> для входа в систему</h1>
 </div>
 
-<form class="avtorizacija">
+<form class="avtorizacija"  th:method="POST" th:action="@{/authorization}" th:object="${authorizationDTO}">
     <div class="flex-wrapper-one">
-        <img src="resourses/VSTU.png" class="logo">
+        <img src= "resourses/VSTU.png" class="logo">
         <p class="labelmer">МЕРОПРИЯТИЯ</p>
     </div>
 
@@ -30,11 +30,11 @@
         <div class="container-login100">
             <div class="wrap-login100">
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="email" id="signup-name" placeholder="логин">
+                    <input class="input100" type="text" name="email" th:field="*{email}" id="signup-name" placeholder="логин">
                     <span class="focus-input100" data-placeholder="Email"></span>
                 </div>
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="pass" id="signup-password" placeholder="пароль">
+                    <input class="input100" type="text" name="pass" th:field="*{password}" id="signup-password" placeholder="пароль">
                     <span class="focus-input100" data-placeholder="Password"></span>
                 </div>
                 <div class="flex-wrapper-two">

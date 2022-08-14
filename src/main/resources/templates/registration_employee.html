@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Регистрация</title>
     <link rel="stylesheet" th:href="@{/css/registration_employee.css}"/>
@@ -18,50 +18,52 @@
     <h1 style="font-size: 13px; color: var(--dim-gray)"> если вы сотрудник ВУЗа</h1>
 </div>
 
-<form class="avtorizacija">
+<form class="avtorizacija" th:method="POST" th:action="@{/}" th:object="${user}">
     <div class="flex-wrapper-one">
         <img src="../../../../../../Project-master/resourses/VSTU.png" class="logo">
         <p class="labelmer">MЕРОПРИЯТИЯ</p>
     </div>
 
-
     <div class="limiter">
         <div class="container-login100">
             <div class="wrap-login100">
-
                 <div class="wrap-input100 validate-input">
-                    <select class="input100" name="division" id="signup-division">
+                    <select class="input100" name="division" th:field="*{division}"  id="signup-division">
                         <option value="0">выберите подразделение</option>
                         <option value="1">Деканат</option>
                         <option value="2">Кафедра</option>
                         <option value="3">Аспирантура</option>
                     </select>
+
                 </div>
 
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="surname" id="signup-surname"
+                    <input class="input100" type="text" name="surname" th:field="*{surname}" id="signup-surname"
                            placeholder="Введите фамилию">
                     <span class="focus-input100" data-placeholder="Surname"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="name" id="signup-name" placeholder="Введите имя">
+                    <input class="input100" type="text" name="name" th:field="*{name}" id="signup-name"
+                           placeholder="Введите имя">
                     <span class="focus-input100" data-placeholder="Name"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="patronymic" id="signup-patronymic"
+                    <input class="input100" type="text" name="patronymic" th:field="*{patronymic}"
+                           id="signup-patronymic"
                            placeholder="Введите отчество">
                     <span class="focus-input100" data-placeholder="Patronymic"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="email" id="signup-email" placeholder="Введите email">
+                    <input class="input100" type="text" name="email" th:field="*{email}" id="signup-email"
+                           placeholder="Введите email">
                     <span class="focus-input100" data-placeholder="Email"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="password" name="pass" id="signup-password"
+                    <input class="input100" type="password" name="password" th:field="*{password}" id="signup-password"
                            placeholder="Введите пароль">
                     <span class="focus-input100" data-placeholder="Password"></span>
                 </div>
