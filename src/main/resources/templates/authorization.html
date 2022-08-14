@@ -3,6 +3,8 @@
 <head>
     <title>Авторизация | Мероприятия ВГТУ</title>
     <link rel="stylesheet" th:href="@{/css/authorization.css}"/>
+    <script type="text/javascript" th:src="@{/js/authorization.js}"></script>
+
 
     <div class="header">
         <h1 class="VSTU">ВГТУ</h1>
@@ -18,7 +20,8 @@
 </div>
 
 
-<form action="authorization.php" method="get" class="avtorizacija">
+<!--<form class="avtorizacija" th:action = "@{/registration_employee}"  method="get">-->
+<form class="avtorizacija">
     <div class="flex-wrapper-one">
         <img src="resourses/VSTU.png" class="logo">
         <p class="labelmer">МЕРОПРИЯТИЯ</p>
@@ -37,7 +40,6 @@
                     <span class="focus-input100" data-placeholder="Password"></span>
                 </div>
                 <div class="flex-wrapper-two">
-
                     <p><input type="submit" value="Войти" id="login-send" class="b1label"></p>
                     <p><input type="submit" value="Зарегистрироваться" id="signup_sumbit" class="reg-label"></p>
                 </div>
@@ -48,8 +50,6 @@
 
 
 </form>
-
-<script src="registration.js"></script>
 
 </body>
 </html>
