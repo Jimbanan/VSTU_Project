@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Личный кабинет студента</title>
+		<link rel="stylesheet" href="Styles.css">
+	</head>
+	<body>
+        <br>
+        <div class ="mainHeader">
+            <a id = "headerM" href="ссылка на мероприятия">мероприятия</a>
+            <a id = "headerK" href="ссылка на календарь">календарь</a>
+            <a id = "headerP" href="ссылка на профиль">Иванов Иван</a>
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="participantsListHeader">Списки участников</div>
+        <br>
+        <br>
+        <table class="inputTable">
+            <tr>
+                <td> 
+                    
+                    <form action="Поиск">  
+                        ПОИСК 
+                        <input type="text"  class= "blueInput"  size="40" name="search" >
+                        <input type="image" src="search.png" alt="ОК" width = "18px" height="18px">
+                    </form>
+                </td>                
+
+                <td>
+                    ФИЛЬТР
+                    <select class= "blueInputSelect">
+                        <option>Java</option>
+                        <option>Python</option>
+                        <option>Волонтерство</option>
+                        <option>Трудоустройство</option>
+                    </select>
+                </td>
+            </tr>
+
+        </table>
+        <br>
+        <br>
+		<table class="mainTable">
+            <tr><th class = "header"></th><th class = "header">Название курса</th><th class = "header"></th></tr> <!--ряд с ячейками заголовков-->
+            <tr>
+                <td class = "whiteBorder"> <a href="#"><img src="pencil.png" class="image" width="30" height="30" alt="Изменение названия курса"></a> </td>
+                <td class = "whiteBorder"><div class = "eventName">Java-разработка</div></td>
+                <td class = "whiteBorder"> <a href="#"><img src="list.png" class="image" width="30" height="30" alt="список участников"></a> </td>
+            </tr>
+            <tr>
+                <td class = "whiteBorder"> <a href="#"><img src="pencil.png" class="image" width="30" height="30" alt="Изменение названия курса"></a> </td>
+                <td class = "whiteBorder"><div class = "eventName">Дизайн интерьеров</div></td>
+                <td class = "whiteBorder"> <a href="#"><img src="list.png" class="image" width="30" height="30" alt="список участников"></a> </td>
+            </tr>
+            <tr>
+                <td class = "whiteBorder"> <a href="#"><img src="pencil.png" class="image" width="30" height="30" alt="Изменение названия курса"></a> </td>
+                <td class = "whiteBorder"><div class = "eventName">Встреча с Neoflex</div></td>
+                <td class = "whiteBorder"><a href="#"><img src="list.png" class="image" width="30" height="30" alt="список участников"></a> </td>
+            </tr>
+            <tr>
+                <td class = "whiteBorder"> <a href="#"><img src="pencil.png" class="image" width="30" height="30" alt="Изменение названия курса"></a> </td>
+                <td class = "whiteBorder"><div class = "eventName">Встреча первокурсников с деканом</div></td>
+                <td class = "whiteBorder"> <a href="#"><img src="list.png" class="image" width="30" height="30" alt="список участников"></a> </td>
+            </tr>
+            <tr>
+                <td class = "whiteBorder"> <a href="#"><img src="pencil.png" class="image" width="30" height="30" alt="Изменение названия курса"></a> </td>
+                <td class = "whiteBorder"><div class = "eventName">Экскурсия по достопримечательностям</div></td>
+                <td class = "whiteBorder"> <a href="#"><img src="list.png" class="image" width="30" height="30" alt="список участников"></a> </td>
+            </tr>
+            <tr>
+                <td class = "whiteBorder"> <a href="#"><img src="pencil.png" class="image" width="30" height="30" alt="Изменение названия курса"></a> </td>
+                <td class = "whiteBorder"><div class = "eventName">Сварка для начинающих: набор на курс</div></td>
+                <td class = "whiteBorder"> <a href="#"><img src="list.png" class="image" width="30" height="30" alt="список участников"></a> </td>
+            </tr>
+            <tr>
+                <td class = "whiteBorder"> <a href="#"><img src="pencil.png" class="image" width="30" height="30" alt="Изменение названия курса"></a> </td>
+                <td class = "whiteBorder"><div class = "eventName">Электричество в жизни человека: лекция от профессора МГУ</div></td>
+                <td class = "whiteBorder"> <a href="#"><img src="list.png" class="image" width="30" height="30" alt="список участников"></a> </td>
+            </tr>
+            
+        </table>
+        <br>
+        <br>
+        <br>
+        <div class="divList">
+            <ul class="pagination">
+                         
+                <li><a class="active" href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                
+                         
+            </ul>
+        
+        
+        </div>
+	</body>
+</html>
