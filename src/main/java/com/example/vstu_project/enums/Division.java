@@ -7,6 +7,7 @@ import lombok.Getter;
 @Getter
 public enum Division {
 
+    STUDENT("Студент"),
     DEANERY("Деканат"),
     CHAIR("Кафедра"),
     PHD("Аспирантура");
