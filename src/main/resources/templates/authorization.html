@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Авторизация | Мероприятия ВГТУ</title>
     <link rel="stylesheet" th:href="@{/css/authorization.css}"/>
@@ -19,8 +19,6 @@
     <h1 style="font-size: 13px; color: var(--dim-gray)"> для входа в систему</h1>
 </div>
 
-
-<!--<form class="avtorizacija" th:action = "@{/registration_employee}"  method="get">-->
 <form class="avtorizacija">
     <div class="flex-wrapper-one">
         <img src="resourses/VSTU.png" class="logo">
@@ -40,8 +38,9 @@
                     <span class="focus-input100" data-placeholder="Password"></span>
                 </div>
                 <div class="flex-wrapper-two">
-                    <p><input type="submit" value="Войти" id="login-send" class="b1label"></p>
-                    <p><input type="submit" value="Зарегистрироваться" id="signup_sumbit" class="reg-label"></p>
+                    <p><input type="submit" value="Войти" id="login-send" class="b1label" ></p>
+                    <p><input type="button" value="Зарегистрироваться" id="signup_sumbit" class="reg-label"
+                              th:onclick="pageOpenRegistration()"></p>
                 </div>
 
             </div>

@@ -1,8 +1,6 @@
-document.querySelector('#Cancel_button').onclick = function(event) {
-    event.preventDefault();
-    const result = confirm("Вы хотите отменить регистрацию?");
-    if(result){
-        window.location.href = "http://localhost:63342/Project/Authorization/index.html?_ijt=bqo9eur40tu00hv0i7mh693bgv&_ij_reload=RELOAD_ON_SAVE"
+function pageOpenAuthorization() {
+    const result = confirm("Р’С‹ С…РѕС‚РёС‚Рµ РѕС‚РјРµРЅРёС‚СЊ СЂРµРіРёСЃС‚СЂР°С†РёСЋ?");
+    if (result) {
+        window.location.href = "http://localhost:8080/authorization"
     }
-
 }
