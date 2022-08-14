@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Авторизация | Мероприятия ВГТУ</title>
+    <link rel="stylesheet" th:href="@{/css/authorization.css}"/>
+
+    <div class="header">
+        <h1 class="VSTU">ВГТУ</h1>
+        <p class="VSTU_full">ВОРОНЕЖСКИЙ ГОСУДАРСТВЕННЫЙ <br>ТЕХНИЧЕСКИЙ УНИВЕРСИТЕТ</p>
+    </div>
+</head>
+
+<body>
+
+<div class="h1container">
+    <h1 style="color: var(--gold); margin-bottom: -5px"> Авторизуйтесь </h1>
+    <h1 style="font-size: 13px; color: var(--dim-gray)"> для входа в систему</h1>
+</div>
+
+
+<form action="authorization.php" method="get" class="avtorizacija">
+    <div class="flex-wrapper-one">
+        <img src="resourses/VSTU.png" class="logo">
+        <p class="labelmer">МЕРОПРИЯТИЯ</p>
+    </div>
+
+
+    <div class="limiter">
+        <div class="container-login100">
+            <div class="wrap-login100">
+                <div class="wrap-input100 validate-input">
+                    <input class="input100" type="text" name="email" id="signup-name" placeholder="логин">
+                    <span class="focus-input100" data-placeholder="Email"></span>
+                </div>
+                <div class="wrap-input100 validate-input">
+                    <input class="input100" type="text" name="pass" id="signup-password" placeholder="пароль">
+                    <span class="focus-input100" data-placeholder="Password"></span>
+                </div>
+                <div class="flex-wrapper-two">
+
+                    <p><input type="submit" value="Войти" id="login-send" class="b1label"></p>
+                    <p><input type="submit" value="Зарегистрироваться" id="signup_sumbit" class="reg-label"></p>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+
+</form>
+
+<script src="registration.js"></script>
+
+</body>
+</html>
