@@ -13,13 +13,13 @@
     <div class="main-page__header">
         <div class="main-page__tabs">
             <div class="main-page__tab"><img class="header__icon"
-                                             src="../../resourses/student_main_page/header-icons/apps 1.svg" alt="icon">
+                                             th:src="@{/images/student_main_page/apps 1.svg/}" alt="icon">
                 <p><input type="button" value="мероприятия" id="main"
                           th:onclick="pageOpenMain()"></p>
 
             </div>
             <div class="main-page__tab"><img class="header__icon"
-                                             src="../../resourses/student_main_page/header-icons/calendar 1.svg"
+                                             th:src="@{/images/student_main_page/calendar 1.svg/}"
                                              alt="icon">
                 <p><input type="button" value="календарь" id="calendar"
                           th:onclick="pageOpenCalendar()"></p>
@@ -31,7 +31,7 @@
             <div class="account__name">
                 Концевая Л.А.
             </div>
-            <img alt="acc" src="../../resourses/student_main_page/header-icons/man 1.svg" class="account__icon">
+            <img alt="acc" th:src="@{/images/student_main_page/man 1.svg/}" class="account__icon">
 
             </img>
         </div>
@@ -40,7 +40,7 @@
         <div class="content__search">
             <div class="search__text">поиск</div>
             <input type="text" class="search__input-search">
-            <img src="../../resourses/student_main_page/search-icons/search 1.svg" alt="" class="search__icon-search">
+            <img th:src="@{/images/student_main_page/search 1.svg/}" alt="" class="search__icon-search">
             <div class="search__text">фильтр</div>
             <select name="" class="search__filter" id="">
                 <option value="">1</option>
@@ -108,14 +108,13 @@
                                 </div>
                                 <div class="section__content">
                                     <img class="header__icon"
-                                         src="../../resourses/student_main_page/header-icons/qr.svg" alt="icon">
+                                         th:src="@{/images/student_main_page/qr.svg/}" alt="icon">
                                 </div>
                             </div>
 
-
                         </div>
                     </div>
-                    <img class="right-section__image" src="../../resourses/student_main_page/java.png" alt="">
+                    <img class="right-section__image" th:src="@{/images/student_main_page/java.png/}" alt="">
                     <button class="right-section__button">отменить запись</button>
                 </div>
             </div>

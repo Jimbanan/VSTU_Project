@@ -21,7 +21,7 @@
 
 <form class="avtorizacija"  th:method="POST" th:action="@{/authorization}" th:object="${authorizationDTO}">
     <div class="flex-wrapper-one">
-        <img src= "resourses/VSTU.png" class="logo">
+        <img th:src= "@{/images/authorization/VSTU.png/}" class="logo">
         <p class="labelmer">МЕРОПРИЯТИЯ</p>
     </div>
 

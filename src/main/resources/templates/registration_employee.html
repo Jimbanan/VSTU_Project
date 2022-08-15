@@ -20,7 +20,7 @@
 
 <form class="avtorizacija" th:method="POST" th:action="@{/}" th:object="${user}">
     <div class="flex-wrapper-one">
-        <img src="../../../../../../Project-master/resourses/VSTU.png" class="logo">
+        <img th:src="@{/images/registration/VSTU.png/}" class="logo">
         <p class="labelmer">MЕРОПРИЯТИЯ</p>
     </div>
 
@@ -28,7 +28,7 @@
         <div class="container-login100">
             <div class="wrap-login100">
                 <div class="wrap-input100 validate-input">
-                    <select class="input100" name="division" th:field="*{division}"  id="signup-division">
+                    <select class="input100" name="division" th:field="*{division}" id="signup-division">
                         <option value="0">выберите подразделение</option>
                         <option value="1">Студент</option>
                         <option value="2">Деканат</option>
