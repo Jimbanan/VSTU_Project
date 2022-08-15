@@ -3,6 +3,8 @@
 <head>
     <title>Мои мероприятия</title>
     <link rel="stylesheet" th:href="@{/css/student_main_page.css}"/>
+    <script type="text/javascript" th:src="@{/js/student_main_page.js}"></script>
+
 
     <link href="https://allfont.ru/allfont.css?fonts=sansation-light" rel="stylesheet" type="text/css"/>
 </head>
@@ -12,12 +14,16 @@
         <div class="main-page__tabs">
             <div class="main-page__tab"><img class="header__icon"
                                              src="../../resourses/student_main_page/header-icons/apps 1.svg" alt="icon">
-                <div>мероприятия</div>
+                <p><input type="button" value="мероприятия" id="main"
+                          th:onclick="pageOpenMain()"></p>
+
             </div>
             <div class="main-page__tab"><img class="header__icon"
                                              src="../../resourses/student_main_page/header-icons/calendar 1.svg"
                                              alt="icon">
-                <div>календарь</div>
+                <p><input type="button" value="календарь" id="calendar"
+                          th:onclick="pageOpenCalendar()"></p>
+
             </div>
         </div>
         <div class="header__vertical-line"></div>

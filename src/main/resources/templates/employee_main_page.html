@@ -3,6 +3,8 @@
 <head>
     <title>Страница сотрудника</title>
     <link rel="stylesheet" th:href="@{/css/employee_main_page.css}"/>
+    <script type="text/javascript" th:src="@{/js/employee_main_page.js}"></script>
+
     <link href="https://allfont.ru/allfont.css?fonts=sansation-light" rel="stylesheet" type="text/css"/>
 </head>
 <body>
@@ -10,13 +12,16 @@
     <div class="main-page__header">
         <div class="main-page__tabs">
             <div class="main-page__tab"><img class="header__icon" src="./header-icons/apps 1.svg" alt="icon">
-                <div>мероприятия</div>
+                <p><input type="button" value="мероприятия" id="main"
+                          th:onclick="pageOpenEmployeeMain()"></p>
             </div>
             <div class="main-page__tab"><img class="header__icon" src="./header-icons/list 1.svg" alt="icon">
-                <div>списки участников</div>
+                <p><input type="button" value="списки участников" id="lists_of_participants"
+                          th:onclick="pageOpenEmployee_lists_of_participants()"></p>
             </div>
             <div class="main-page__tab"><img class="header__icon" src="./header-icons/edit 1.svg" alt="icon">
-                <div>управление мероприятиями</div>
+                <p><input type="button" value="управление мероприятиями" id="event_management"
+                          th:onclick="pageOpenEmployeeEventManagement()"></p>
             </div>
         </div>
         <div class="header__vertical-line"></div>

@@ -12,4 +12,9 @@ public class StudentController {
         return "student_main_page";
     }
 
+    @RequestMapping("/calendar")
+    public String calendarPage() {
+        return "student_calendar";
+    }
+
 }

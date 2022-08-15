@@ -12,4 +12,15 @@ public class EmployeeController {
         return "employee_main_page";
     }
 
+    @RequestMapping("/lists_of_participants")
+    public String listsOfParticipantsPage() {
+        return "employee_lists_of_participants";
+    }
+
+    @RequestMapping("/event_management")
+    public String eventManagementPage() {
+        return "employee_event_management";
+    }
+
+
 }
