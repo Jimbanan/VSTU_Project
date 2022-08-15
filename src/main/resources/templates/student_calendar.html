@@ -11,11 +11,12 @@
 <div class="main-page__container">
     <div class="main-page__header">
         <div class="main-page__tabs">
-            <div class="main-page__tab"><img class="header__icon" src="./header-icons/apps 1.svg" alt="icon">
+            <div class="main-page__tab"><img class="header__icon" th:src="@{/images/student_main_page/apps 1.svg/}"
+                                             alt="icon">
                 <p><input type="button" value="Мероприятия" id="calendar"
                           th:onclick="pageOpenMain()"></p>
             </div>
-            <div class="main-page__tab"><img class="header__icon" src="./header-icons/calendar 1.svg" alt="icon">
+            <div class="main-page__tab"><img class="header__icon" th:src="@{/images/student_main_page/calendar 1.svg/}" alt="icon">
                 <p><input type="button" value="календарь" id="main"
                           th:onclick="pageOpenCalendar()"></p>
             </div>
@@ -25,7 +26,7 @@
             <div class="account__name">
                 Концевая Л.А.
             </div>
-            <img alt="acc" src="./header-icons/man 1.svg" class="account__icon">
+            <img alt="acc" th:src="@{/images/student_main_page/man 1.svg/}" class="account__icon">
 
             </img>
         </div>

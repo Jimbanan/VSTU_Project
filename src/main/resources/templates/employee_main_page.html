@@ -11,15 +11,18 @@
 <div class="main-page__container">
     <div class="main-page__header">
         <div class="main-page__tabs">
-            <div class="main-page__tab"><img class="header__icon" src="./header-icons/apps 1.svg" alt="icon">
+            <div class="main-page__tab"><img class="header__icon" th:src="@{/images/employee_main_page/apps 1.svg/}"
+                                             alt="icon">
                 <p><input type="button" value="мероприятия" id="main"
                           th:onclick="pageOpenEmployeeMain()"></p>
             </div>
-            <div class="main-page__tab"><img class="header__icon" src="./header-icons/list 1.svg" alt="icon">
+            <div class="main-page__tab"><img class="header__icon" th:src="@{/images/employee_main_page/list 1.svg/}"
+                                             alt="icon">
                 <p><input type="button" value="списки участников" id="lists_of_participants"
                           th:onclick="pageOpenEmployee_lists_of_participants()"></p>
             </div>
-            <div class="main-page__tab"><img class="header__icon" src="./header-icons/edit 1.svg" alt="icon">
+            <div class="main-page__tab"><img class="header__icon" th:src="@{/images/employee_main_page/edit 1.svg/}"
+                                             alt="icon">
                 <p><input type="button" value="управление мероприятиями" id="event_management"
                           th:onclick="pageOpenEmployeeEventManagement()"></p>
             </div>
@@ -29,14 +32,14 @@
             <div class="account__name">
                 Тарасов Е.В
             </div>
-            <img alt="acc" src="./header-icons/man 1.svg" class="account__icon">
+            <img alt="acc" th:src="@{/images/employee_main_page/man 1.svg/}" class="account__icon">
         </div>
     </div>
     <div class="main-page__content">
         <div class="content__search">
             <div class="search__text">поиск</div>
             <input type="text" class="search__input-search">
-            <img src="./search-icons/search 1.svg" alt="" class="search__icon-search">
+            <img  th:src="@{/images/employee_main_page/search 1.svg/}" alt="" class="search__icon-search">
             <div class="search__text">фильтр</div>
             <select name="" class="search__filter" id="">
                 <option value="">1</option>
@@ -86,7 +89,7 @@
 
                 </div>
                 <div class="event_right-section">
-                    <img class="right-section__image" src="./java.png" alt="">
+                    <img class="right-section__image" th:src="@{/images/employee_main_page/java.png/}" alt="">
                     <button class="right-section__button">редактировать</button>
                 </div>
             </div>
