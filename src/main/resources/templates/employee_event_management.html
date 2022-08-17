@@ -19,21 +19,21 @@
     <div class="main-page__header">
         <div class="main-page__tabs">
 
-            <a href="http://localhost:8080/employee/main">
+            <a th:href="${'http://localhost:' + {@environment.getProperty('server.port')} + '/employee/main'}">
                 <div class="main-page__tab">
                     <img class="header__icon" th:src="@{/images/employee_event_management/apps 1.svg/}" alt="icon">
                     Мероприятия
                 </div>
             </a>
 
-            <a href="http://localhost:8080/employee/lists_of_participants">
+            <a th:href="${'http://localhost:' + {@environment.getProperty('server.port')} + '/employee/lists_of_participants'}">
                 <div class="main-page__tab">
                     <img class="header__icon" th:src="@{/images/employee_event_management/list 1.svg/}" alt="icon">
                     Списки участников
                 </div>
             </a>
 
-            <a href="http://localhost:8080/employee/event_management">
+            <a th:href="${'http://localhost:' + {@environment.getProperty('server.port')} + '/employee/event_management'}">
                 <div class="main-page__tab">
                     <img class="header__icon" th:src="@{/images/employee_event_management/edit 1.svg/}" alt="icon">
                     Управление мероприятиями

@@ -13,3 +13,5 @@ databaseChangeLog:
   - include:
       file: db/changelog/changeset/users_roles/create-users_roles-table.yaml
 
+server:
+  port: 8080

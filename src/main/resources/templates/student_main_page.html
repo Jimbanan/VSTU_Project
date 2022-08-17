@@ -16,14 +16,14 @@
     <div class="main-page__header">
         <div class="main-page__tabs">
 
-            <a href="http://localhost:8080/student/main">
+            <a th:href="${'http://localhost:' + {@environment.getProperty('server.port')} + '/student/main'}">
                 <div class="main-page__tab">
                     <img class="header__icon" th:src="@{/images/student_main_page/apps 1.svg/}" alt="icon">
                     Мероприятия
                 </div>
             </a>
 
-            <a href="http://localhost:8080/student/calendar">
+            <a th:href="${'http://localhost:' + {@environment.getProperty('server.port')} + '/student/calendar'}">
                 <div class="main-page__tab">
                     <img class="header__icon" th:src="@{/images/student_main_page/calendar 1.svg/}" alt="icon">
                     Календарь
