@@ -39,7 +39,7 @@ databaseChangeLog:
                   value: "st. Lenina, 88"
               - column:
                   name: name
-                  value: "Investigation of the flow state"
+                  value: "Investigation of the flow"
         - insert:
             tableName: courses
             columns:
@@ -51,7 +51,7 @@ databaseChangeLog:
                   value: "Gagarin street, 22"
               - column:
                   name: name
-                  value: "Competitive selection for the Sprint Accelerator"
+                  value: "Competitive selection for the"
         - insert:
             tableName: courses
             columns:
@@ -99,7 +99,7 @@ databaseChangeLog:
                   value: "Proezd Kosior, 56"
               - column:
                   name: name
-                  value: "School of Management for Entrepreneurs"
+                  value: "School of Management for En"
         - insert:
             tableName: courses
             columns:
@@ -111,7 +111,7 @@ databaseChangeLog:
                   value: "Balkanskaya street, 86"
               - column:
                   name: name
-                  value: "Speech trainingHow to speak beautifully"
+                  value: "Speech trainingHow to speak"
         - insert:
             tableName: courses
             columns:
@@ -123,7 +123,7 @@ databaseChangeLog:
                   value: "St. Domodedovskaya, 55"
               - column:
                   name: name
-                  value: "They don't go to IT for a salary"
+                  value: "They don't go to IT for"
         - insert:
             tableName: courses
             columns:
