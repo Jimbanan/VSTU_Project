@@ -1,0 +1,50 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-users_roles
+      author: Jimbanani
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  constraints:
+                    nullable: false
+                  name: users_id
+                  type: BIGINT
+              - column:
+                  constraints:
+                    nullable: false
+                  name: roles_id
+                  type: BIGINT
+            tableName: users_roles
+
+  - changeSet:
+      id: addForeignKeyConstraint-users_roles-role
+      author: Jimbanani
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: roles_id
+            baseTableName: users_roles
+            constraintName: fk15d410tj6juko0sq9k4km60xq
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: NO ACTION
+            onUpdate: NO ACTION
+            referencedColumnNames: id
+            referencedTableName: role
+            validate: true
+
+  - changeSet:
+      id: addForeignKeyConstraint-users_roles-users
+      author: Jimbanani
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: users_id
+            baseTableName: users_roles
+            constraintName: fkml90kef4w2jy7oxyqv742tsfc
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: NO ACTION
+            onUpdate: NO ACTION
+            referencedColumnNames: id
+            referencedTableName: users
+            validate: true

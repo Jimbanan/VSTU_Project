@@ -31,15 +31,24 @@
             </a>
 
         </div>
+
+
         <div class="header__vertical-line"></div>
         <div class="header__account">
-
-            <div class="account__name" th:text="${fullNameUser}"/>
-
+            <div class="account__name" th:text="${fullNameUser}">
+                <div class="dropdown" style="float:right;"> <!--Todo-->
+                    <button class="dropbtn">Справа</button>
+                    <div class="dropdown-content">
+                        <a href="http://localhost:8081/student/calendar">Ссылка 1</a>
+                        <a href="#">Ссылка 2</a>
+                        <a href="#">Ссылка 3</a>
+                    </div>
+                </div>
+            </div>
             <img alt="acc" th:src="@{/images/student_main_page/man 1.svg/}" class="account__icon">
-
-            </img>
         </div>
+
+
     </div>
     <div class="main-page__content">
         <div class="content__search">

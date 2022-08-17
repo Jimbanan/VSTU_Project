@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
 
+import java.time.LocalDateTime;
+
 @Controller
 @SessionAttributes(value = "UserIDRegistrationController")
 @RequestMapping("/employee")
@@ -21,8 +23,11 @@ public class EmployeeController {
     @RequestMapping("/main")
     public String mainPage(@ModelAttribute("UserIDRegistrationController") Long id, Model model) {
 
-        model.addAttribute("fullNameUser", employeeService.getFullName(id));
-        model.addAttribute("UserIDRegistrationController", id);
+        model.addAttribute("fullNameUser", employeeService.getFullName(id));//Получение полного имени пользователя
+
+        model.addAttribute("courses", employeeService.getAllCourses());//Получение всех курсов
+
+        model.addAttribute("UserIDRegistrationController", id);//Добавление ID пользователя в сессию
 
         return "employee_main_page";
     }

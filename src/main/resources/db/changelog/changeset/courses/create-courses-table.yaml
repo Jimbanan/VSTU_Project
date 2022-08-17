@@ -1,0 +1,138 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-courses
+      author: Jimbanani
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: courses_pkey
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: date_time
+                  type: TIMESTAMP WITHOUT TIME ZONE
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: place
+                  type: VARCHAR(255)
+            tableName: courses
+
+  - changeSet:
+      id: insert-courses
+      author: Jimbanani
+      changes:
+        - insert:
+            tableName: courses
+            columns:
+              - column:
+                  name: date_time
+                  value: 2022-08-18 20:20:20.000000
+              - column:
+                  name: place
+                  value: "st. Lenina, 88"
+              - column:
+                  name: name
+                  value: "Investigation of the flow state"
+        - insert:
+            tableName: courses
+            columns:
+              - column:
+                  name: date_time
+                  value: 2022-08-18 20:20:20.000000
+              - column:
+                  name: place
+                  value: "Gagarin street, 22"
+              - column:
+                  name: name
+                  value: "Competitive selection for the Sprint Accelerator"
+        - insert:
+            tableName: courses
+            columns:
+              - column:
+                  name: date_time
+                  value: 2022-08-21 20:20:20.000000
+              - column:
+                  name: place
+                  value: "pr. Lomonosov, 23"
+              - column:
+                  name: name
+                  value: "Integrator's day"
+        - insert:
+            tableName: courses
+            columns:
+              - column:
+                  name: date_time
+                  value: 2022-08-22 20:20:20.000000
+              - column:
+                  name: place
+                  value: "Emb. Glory, 85"
+              - column:
+                  name: name
+                  value: "Conference Digital Socialism"
+        - insert:
+            tableName: courses
+            columns:
+              - column:
+                  name: date_time
+                  value: 2022-08-24 20:20:20.000000
+              - column:
+                  name: place
+                  value: "pr. Cosmonauts, 11"
+              - column:
+                  name: name
+                  value: "TON Svet"
+        - insert:
+            tableName: courses
+            columns:
+              - column:
+                  name: date_time
+                  value: 2022-08-27 20:20:20.000000
+              - column:
+                  name: place
+                  value: "Proezd Kosior, 56"
+              - column:
+                  name: name
+                  value: "School of Management for Entrepreneurs"
+        - insert:
+            tableName: courses
+            columns:
+              - column:
+                  name: date_time
+                  value: 2022-08-28 20:20:20.000000
+              - column:
+                  name: place
+                  value: "Balkanskaya street, 86"
+              - column:
+                  name: name
+                  value: "Speech trainingHow to speak beautifully"
+        - insert:
+            tableName: courses
+            columns:
+              - column:
+                  name: date_time
+                  value: 2022-08-30 20:20:20.000000
+              - column:
+                  name: place
+                  value: "St. Domodedovskaya, 55"
+              - column:
+                  name: name
+                  value: "They don't go to IT for a salary"
+        - insert:
+            tableName: courses
+            columns:
+              - column:
+                  name: date_time
+                  value: 2022-08-31 20:20:20.000000
+              - column:
+                  name: place
+                  value: "pr. Cosmonauts, 56"
+              - column:
+                  name: name
+                  value: "Expert conference NTI Autonet"
