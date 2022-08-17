@@ -4,38 +4,47 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <link rel="stylesheet" th:href="@{/css/employee_event_management.css}"/>
     <script type="text/javascript" th:src="@{/js/employee_event_management.js}"></script>
-
     <link href="https://allfont.ru/allfont.css?fonts=sansation-light" rel="stylesheet" type="text/css"/>
     <title>Управление мероприятиями</title>
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
 <div class="main-page__container">
     <div class="main-page__header">
         <div class="main-page__tabs">
-            <div class="main-page__tab"><img class="header__icon"
-                                             th:src="@{/images/employee_event_management/apps 1.svg/}" alt="icon">
-                <p><input type="button" value="мероприятия" id="main"
-                          th:onclick="pageOpenEmployeeMain()"></p>
-            </div>
-            <div class="main-page__tab"><img class="header__icon"
-                                             th:src="@{/images/employee_event_management/list 1.svg/}" alt="icon">
-                <p><input type="button" value="списки участников" id="lists_of_participants"
-                          th:onclick="pageOpenEmployee_lists_of_participants()"></p>
-            </div>
-            <div class="main-page__tab"><img class="header__icon"
-                                             th:src="@{/images/employee_event_management/edit 1.svg/}" alt="icon">
-                <p><input type="button" value="управление мероприятиями" id="event_management"
-                          th:onclick="pageOpenEmployeeEventManagement()"></p>
-            </div>
+
+            <a href="http://localhost:8080/employee/main">
+                <div class="main-page__tab">
+                    <img class="header__icon" th:src="@{/images/employee_event_management/apps 1.svg/}" alt="icon">
+                    Мероприятия
+                </div>
+            </a>
+
+            <a href="http://localhost:8080/employee/lists_of_participants">
+                <div class="main-page__tab">
+                    <img class="header__icon" th:src="@{/images/employee_event_management/list 1.svg/}" alt="icon">
+                    Списки участников
+                </div>
+            </a>
+
+            <a href="http://localhost:8080/employee/event_management">
+                <div class="main-page__tab">
+                    <img class="header__icon" th:src="@{/images/employee_event_management/edit 1.svg/}" alt="icon">
+                    Управление мероприятиями
+                </div>
+            </a>
         </div>
         <div class="header__vertical-line"></div>
         <div class="header__account">
-            <div class="account__name">
-                Тарасов Е.В
-            </div>
+
+            <div class="account__name" th:text="${fullNameUser}"/>
+
             <img alt="acc" th:src="@{/images/employee_main_page/man 1.svg/}" class="account__icon">
         </div>
     </div>

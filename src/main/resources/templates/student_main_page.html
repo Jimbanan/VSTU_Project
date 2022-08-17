@@ -4,33 +4,38 @@
     <title>Мои мероприятия</title>
     <link rel="stylesheet" th:href="@{/css/student_main_page.css}"/>
     <script type="text/javascript" th:src="@{/js/student_main_page.js}"></script>
-
-
     <link href="https://allfont.ru/allfont.css?fonts=sansation-light" rel="stylesheet" type="text/css"/>
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
 <div class="main-page__container">
     <div class="main-page__header">
         <div class="main-page__tabs">
-            <div class="main-page__tab"><img class="header__icon"
-                                             th:src="@{/images/student_main_page/apps 1.svg/}" alt="icon">
-                <p><input type="button" value="мероприятия" id="main"
-                          th:onclick="pageOpenMain()"></p>
 
-            </div>
-            <div class="main-page__tab"><img class="header__icon"
-                                             th:src="@{/images/student_main_page/calendar 1.svg/}"
-                                             alt="icon">
-                <p><input type="button" value="календарь" id="calendar"
-                          th:onclick="pageOpenCalendar()"></p>
+            <a href="http://localhost:8080/student/main">
+                <div class="main-page__tab">
+                    <img class="header__icon" th:src="@{/images/student_main_page/apps 1.svg/}" alt="icon">
+                    Мероприятия
+                </div>
+            </a>
 
-            </div>
+            <a href="http://localhost:8080/student/calendar">
+                <div class="main-page__tab">
+                    <img class="header__icon" th:src="@{/images/student_main_page/calendar 1.svg/}" alt="icon">
+                    Календарь
+                </div>
+            </a>
+
         </div>
         <div class="header__vertical-line"></div>
         <div class="header__account">
-            <div class="account__name">
-                Концевая Л.А.
-            </div>
+
+            <div class="account__name" th:text="${fullNameUser}"/>
+
             <img alt="acc" th:src="@{/images/student_main_page/man 1.svg/}" class="account__icon">
 
             </img>

@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,14 +35,16 @@ public class RegistrationController {
     }
 
     @PostMapping("/authorization")
-    public String findUser(@ModelAttribute("authorizationDTO") AuthorizationDTO authorizationDTO) {
+    public String findUser(@ModelAttribute("authorizationDTO") AuthorizationDTO authorizationDTO,
+                           final RedirectAttributes redirectAttributes) {
 
         Users users = authorizationServices.findUser(authorizationDTO);
-
         if (users != null) {
             if (users.getDivision().equals(Division.STUDENT.getDisplayValue())) {
+                redirectAttributes.addFlashAttribute("UserIDRegistrationController", users.getId());
                 return "redirect:/student/main";
             } else {
+                redirectAttributes.addFlashAttribute("UserIDRegistrationController", users.getId());
                 return "redirect:/employee/main";
             }
         } else {

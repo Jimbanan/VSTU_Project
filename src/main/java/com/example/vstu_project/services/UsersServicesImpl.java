@@ -6,7 +6,8 @@ import com.example.vstu_project.repositories.UsersRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
+import java.util.NoSuchElementException;
+import java.util.Optional;
 
 @Service
 @RequiredArgsConstructor
@@ -20,6 +21,11 @@ public class UsersServicesImpl implements UsersServices {
 
     public Users findUser(AuthorizationDTO authorizationDTO) {
         return usersRepository.findByEmailAndPassword(authorizationDTO.getEmail(), authorizationDTO.getPassword());
+    }
+
+    public Users findUserById(Long id) {
+        return usersRepository.findById(id).orElseThrow(()
+                -> new NoSuchElementException("with id='" + id + "' does not exist"));
     }
 
 }

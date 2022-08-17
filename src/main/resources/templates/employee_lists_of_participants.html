@@ -5,27 +5,38 @@
     <title>Личный кабинет студента</title>
     <link rel="stylesheet" th:href="@{/css/employee_lists_of_participants.css}"/>
     <script type="text/javascript" th:src="@{/js/employee_lists_of_participants.js}"></script>
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
 <br>
 <div class="mainHeader">
-    <div class="main-page__tab"><img class="header__icon"
-                                     th:src="@{/images/employee_event_management/apps 1.svg/}" alt="icon">
-        <p><input type="button" value="мероприятия" id="main"
-                  th:onclick="pageOpenEmployeeMain()"></p>
-    </div>
-    <div class="main-page__tab"><img class="header__icon"
-                                     th:src="@{/images/employee_event_management/list 1.svg/}" alt="icon">
-        <p><input type="button" value="списки участников" id="lists_of_participants"
-                  th:onclick="pageOpenEmployee_lists_of_participants()"></p>
-    </div>
-    <div class="main-page__tab"><img class="header__icon"
-                                     th:src="@{/images/employee_event_management/edit 1.svg/}" alt="icon">
-        <p><input type="button" value="управление мероприятиями" id="event_management"
-                  th:onclick="pageOpenEmployeeEventManagement()"></p>
-    </div>
 
-    <a id="headerP" href="ссылка на профиль">Иванов Иван</a>
+    <a href="http://localhost:8080/employee/main">
+        <div class="main-page__tab">
+            <img class="header__icon" th:src="@{/images/employee_event_management/apps 1.svg/}" alt="icon">
+            Мероприятия
+        </div>
+    </a>
+
+    <a href="http://localhost:8080/employee/lists_of_participants">
+        <div class="main-page__tab">
+            <img class="header__icon" th:src="@{/images/employee_event_management/list 1.svg/}" alt="icon">
+            Списки участников
+        </div>
+    </a>
+
+    <a href="http://localhost:8080/employee/event_management">
+        <div class="main-page__tab">
+            <img class="header__icon" th:src="@{/images/employee_event_management/edit 1.svg/}" alt="icon">
+            Управление мероприятиями
+        </div>
+    </a>
+    <div class="account__name" th:text="${fullNameUser}"/>
+
 </div>
 <br>
 <br>
