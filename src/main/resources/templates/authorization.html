@@ -4,8 +4,6 @@
     <title>Авторизация | Мероприятия ВГТУ</title>
     <link rel="stylesheet" th:href="@{/css/authorization.css}"/>
     <script type="text/javascript" th:src="@{/js/authorization.js}"></script>
-
-
     <div class="header">
         <h1 class="VSTU">ВГТУ</h1>
         <p class="VSTU_full">ВОРОНЕЖСКИЙ ГОСУДАРСТВЕННЫЙ <br>ТЕХНИЧЕСКИЙ УНИВЕРСИТЕТ</p>
@@ -19,9 +17,9 @@
     <h1 style="font-size: 13px; color: var(--dim-gray)"> для входа в систему</h1>
 </div>
 
-<form class="avtorizacija"  th:method="POST" th:action="@{/authorization}" th:object="${authorizationDTO}">
+<form class="avtorizacija" th:method="POST" th:action="@{/authorization}" th:object="${authorizationDTO}">
     <div class="flex-wrapper-one">
-        <img th:src= "@{/images/authorization/VSTU.png/}" class="logo">
+        <img th:src="@{/images/authorization/VSTU.png/}" class="logo">
         <p class="labelmer">МЕРОПРИЯТИЯ</p>
     </div>
 
@@ -30,17 +28,27 @@
         <div class="container-login100">
             <div class="wrap-login100">
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="email" th:field="*{email}" id="signup-name" placeholder="логин">
+                    <input class="input100" type="text" name="email" th:field="*{email}" id="signup-name"
+                           placeholder="логин">
                     <span class="focus-input100" data-placeholder="Email"></span>
                 </div>
                 <div class="wrap-input100 validate-input">
-                    <input class="input100" type="text" name="pass" th:field="*{password}" id="signup-password" placeholder="пароль">
+                    <input class="input100" type="text" name="pass" th:field="*{password}" id="signup-password"
+                           placeholder="пароль">
                     <span class="focus-input100" data-placeholder="Password"></span>
                 </div>
                 <div class="flex-wrapper-two">
-                    <p><input type="submit" value="Войти" id="login-send" class="b1label" ></p>
-                    <p><input type="button" value="Зарегистрироваться" id="signup_sumbit" class="reg-label"
-                              th:onclick="pageOpenRegistration()"></p>
+                    <p><input type="submit" value="Войти" id="login-send" class="b1label"></p>
+
+                    <!--                                        <div th:text="@{window.location.href=} + @{'http://localhost:} + ${@environment.getProperty('server.port')} + @{/registration_employee'}"></div>-->
+
+                    <p th:with="url=${@environment.getProperty('server.port')}"><input type="button"
+                                                                                       value="Зарегистрироваться"
+                                                                                       id="signup_sumbit"
+                                                                                       class="reg-label"
+                                                                                       th:attr="onclick=|pageOpenRegistration('${url}')|">
+                    </p>
+
                 </div>
 
             </div>

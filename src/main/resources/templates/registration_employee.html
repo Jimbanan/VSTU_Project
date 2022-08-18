@@ -70,8 +70,11 @@
                 </div>
 
                 <div class="flex-wrapper-two">
-                    <p><input type="button" value="Назад" id="Cancel_button" class="b1label"
-                              th:onclick="pageOpenAuthorization()"></p>
+                    <p th:with="url=${@environment.getProperty('server.port')}"><input type="button" value="Назад"
+                                                                                       id="Cancel_button"
+                                                                                       class="b1label"
+                                                                                       th:attr="onclick=|pageOpenAuthorization('${url}')|">
+                    </p>
                     <p><input type="submit" value="Зарегистрироваться" id="login-send" class="reg-label"></p>
                 </div>
             </div>

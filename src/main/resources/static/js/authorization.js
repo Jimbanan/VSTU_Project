@@ -1,3 +1,4 @@
-function pageOpenRegistration() {
-    window.location.href = "http://localhost:8080/registration_employee"
+function pageOpenRegistration(port) {
+    const url = 'http://localhost:' + port + "/registration_employee";
+    window.location.href = url
 }

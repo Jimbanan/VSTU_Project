@@ -1,5 +1,6 @@
-function pageOpenEmployeeMain() {
-    window.location.href = "http://localhost:8080/employee/main"
+function pageOpenEmployeeMain(url) {
+    console.log(url)
+    window.location.href = "http://localhost:8085/employee/main"
 }
 
 function pageOpenEmployee_lists_of_participants() {
