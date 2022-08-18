@@ -3,7 +3,6 @@ package com.example.vstu_project.controllers;
 import com.example.vstu_project.dto.AuthorizationDTO;
 import com.example.vstu_project.entity.Users;
 import com.example.vstu_project.enums.Division;
-import com.example.vstu_project.enums.Roles;
 import com.example.vstu_project.services.AuthorizationServicesImpl;
 import com.example.vstu_project.services.RegistrationServicesImpl;
 import org.springframework.stereotype.Controller;
@@ -14,8 +13,6 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.ArrayList;
-import java.util.List;
 
 @Controller
 public class RegistrationController {

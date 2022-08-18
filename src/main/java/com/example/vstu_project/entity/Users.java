@@ -1,6 +1,5 @@
 package com.example.vstu_project.entity;
 
-import com.example.vstu_project.enums.Division;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
