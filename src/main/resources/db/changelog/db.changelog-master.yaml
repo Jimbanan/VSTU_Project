@@ -7,6 +7,9 @@ databaseChangeLog:
       file: db/changelog/changeset/courses/create-courses-table.yaml
 
   - include:
+      file: db/changelog/changeset/categories/create-categories-table.yaml
+
+  - include:
       file: db/changelog/changeset/role/create-role-table.yaml
 
   - include:

@@ -73,12 +73,9 @@
                                     Категории:
                                 </div>
                                 <div class="section__content">
-                                    <div class="category">
-                                        программирование
-                                    </div>
-                                    <div class="category">
-                                        JAVA
-                                    </div>
+                                    <th:block th:each="catetory : ${course.categories}">
+                                        <div class="category" th:utext="${catetory.categories}"/>
+                                    </th:block>
                                 </div>
                             </div>
                             <div class="left-section__section">

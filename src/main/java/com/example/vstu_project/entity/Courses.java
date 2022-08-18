@@ -7,6 +7,7 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 @Builder
@@ -23,8 +24,9 @@ public class Courses implements Comparable<Courses> {
     @Column
     private String name;
 
-//    @OneToMany(cascade = {CascadeType.ALL}, mappedBy="courses")
-//    private List<Categories> categories;
+    @OneToMany(cascade = {CascadeType.ALL})
+    @JoinColumn(name = "categories_id")
+    private List<Categories> categories;
 
     @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
     @JoinColumn(name = "studentCourse_id", unique = true, updatable = false)
