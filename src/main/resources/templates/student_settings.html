@@ -25,6 +25,10 @@
 
 <div class="account__name" th:text="${fullNameUser}"/>
 
+<a th:href="${'http://localhost:' + {@environment.getProperty('server.port')} + '/student/myEvents'}">
+    Мои мероприятия
+</a>
+
 <a th:href="${'http://localhost:' + {@environment.getProperty('server.port')} + '/student/settings'}">
     Настройки
 </a>

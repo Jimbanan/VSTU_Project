@@ -38,6 +38,10 @@
 
             <img alt="acc" th:src="@{/images/student_main_page/man 1.svg/}" class="account__icon">
 
+            <a th:href="${'http://localhost:' + {@environment.getProperty('server.port')} + '/student/myEvents'}">
+                Мои мероприятия
+            </a>
+
             <a th:href="${'http://localhost:' + {@environment.getProperty('server.port')} + '/student/settings'}">
                 Настройки
             </a>
