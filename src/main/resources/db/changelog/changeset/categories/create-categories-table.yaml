@@ -36,3 +36,206 @@ databaseChangeLog:
             referencedColumnNames: id
             referencedTableName: courses
             validate: true
+
+  - changeSet:
+      id: insert-courses
+      author: Jimbanani
+      changes:
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: Java
+              - column:
+                  name: categories_id
+                  value: 1
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: C++
+              - column:
+                  name: categories_id
+                  value: 1
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: C++
+              - column:
+                  name: categories_id
+                  value: 2
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: Python
+              - column:
+                  name: categories_id
+                  value: 3
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: C
+              - column:
+                  name: categories_id
+                  value: 3
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: Java
+              - column:
+                  name: categories_id
+                  value: 4
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: Kotlin
+              - column:
+                  name: categories_id
+                  value: 4
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: Go
+              - column:
+                  name: categories_id
+                  value: 4
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: Gosu
+              - column:
+                  name: categories_id
+                  value: 5
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: Go
+              - column:
+                  name: categories_id
+                  value: 5
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: Kotlin
+              - column:
+                  name: categories_id
+                  value: 5
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: Philosophy
+              - column:
+                  name: categories_id
+                  value: 6
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: Entertainment
+              - column:
+                  name: categories_id
+                  value: 6
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: Frontend
+              - column:
+                  name: categories_id
+                  value: 7
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: HTML
+              - column:
+                  name: categories_id
+                  value: 7
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: CSS
+              - column:
+                  name: categories_id
+                  value: 7
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: JavaScript
+              - column:
+                  name: categories_id
+                  value: 7
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: Backend
+              - column:
+                  name: categories_id
+                  value: 8
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: Docker
+              - column:
+                  name: categories_id
+                  value: 8
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: Kafka
+              - column:
+                  name: categories_id
+                  value: 9
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: Zookeeper
+              - column:
+                  name: categories_id
+                  value: 9
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: categories
+                  value: Liquibase
+              - column:
+                  name: categories_id
+                  value: 9
