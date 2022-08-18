@@ -1,0 +1,115 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-student_course
+      author: Jimbanani
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: student_course_pkey
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: studentCourse
+                  type: VARCHAR(255)
+            tableName: student_course
+  - changeSet:
+      id: insert-student_course
+      author: Jimbanani
+      changes:
+        - insert:
+            tableName: student_course
+            columns:
+              - column:
+                  name: studentCourse
+                  value: 1
+        - insert:
+            tableName: student_course
+            columns:
+              - column:
+                  name: studentCourse
+                  value: 1-2
+        - insert:
+            tableName: student_course
+            columns:
+              - column:
+                  name: studentCourse
+                  value: 1-3
+        - insert:
+            tableName: student_course
+            columns:
+              - column:
+                  name: studentCourse
+                  value: 1-4
+        - insert:
+            tableName: student_course
+            columns:
+              - column:
+                  name: studentCourse
+                  value: 1-5
+        - insert:
+            tableName: student_course
+            columns:
+              - column:
+                  name: studentCourse
+                  value: 2
+        - insert:
+            tableName: student_course
+            columns:
+              - column:
+                  name: studentCourse
+                  value: 2-3
+        - insert:
+            tableName: student_course
+            columns:
+              - column:
+                  name: studentCourse
+                  value: 2-4
+        - insert:
+            tableName: student_course
+            columns:
+              - column:
+                  name: studentCourse
+                  value: 2-5
+        - insert:
+            tableName: student_course
+            columns:
+              - column:
+                  name: studentCourse
+                  value: 3
+        - insert:
+            tableName: student_course
+            columns:
+              - column:
+                  name: studentCourse
+                  value: 3-4
+        - insert:
+            tableName: student_course
+            columns:
+              - column:
+                  name: studentCourse
+                  value: 3-5
+        - insert:
+            tableName: student_course
+            columns:
+              - column:
+                  name: studentCourse
+                  value: 4
+        - insert:
+            tableName: student_course
+            columns:
+              - column:
+                  name: studentCourse
+                  value: 4-5
+        - insert:
+            tableName: student_course
+            columns:
+              - column:
+                  name: studentCourse
+                  value: 5
+
+

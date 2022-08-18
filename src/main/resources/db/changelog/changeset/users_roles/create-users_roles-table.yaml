@@ -6,6 +6,7 @@ databaseChangeLog:
         - createTable:
             columns:
               - column:
+                  autoIncrement: true
                   constraints:
                     nullable: false
                   name: users_id

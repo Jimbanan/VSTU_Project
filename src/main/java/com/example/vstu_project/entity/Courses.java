@@ -26,9 +26,9 @@ public class Courses implements Comparable<Courses> {
 //    @OneToMany(cascade = {CascadeType.ALL}, mappedBy="courses")
 //    private List<Categories> categories;
 
-//    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
-//    @JoinColumn(name = "studentCourse_id", unique = true, updatable = false)
-//    private StudentCourse studentCourse;
+    @OneToOne(cascade = {CascadeType.ALL}, fetch = FetchType.LAZY)
+    @JoinColumn(name = "studentCourse_id", unique = true, updatable = false)
+    private StudentCourse studentCourse;
 
     @Column
     private LocalDateTime dateTime;
