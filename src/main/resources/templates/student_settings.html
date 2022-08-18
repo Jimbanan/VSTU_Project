@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Личный кабинет студента</title>
+    <link rel="stylesheet" th:href="@{/css/student_settings.css}"/>
+</head>
+<body>
+<br>
+<div class="mainHeader">
+    <a th:href="${'http://localhost:' + {@environment.getProperty('server.port')} + '/student/main'}">
+        <div class="main-page__tab">
+            <img class="header__icon" th:src="@{/images/student_main_page/apps 1.svg/}" alt="icon">
+            Мероприятия
+        </div>
+    </a>
+
+    <a th:href="${'http://localhost:' + {@environment.getProperty('server.port')} + '/student/calendar'}">
+        <div class="main-page__tab">
+            <img class="header__icon" th:src="@{/images/student_main_page/calendar 1.svg/}" alt="icon">
+            Календарь
+        </div>
+    </a>
+</div>
+
+<div class="account__name" th:text="${fullNameUser}"/>
+
+<a th:href="${'http://localhost:' + {@environment.getProperty('server.port')} + '/student/settings'}">
+    Настройки
+</a>
+
+<a th:href="${'http://localhost:' + {@environment.getProperty('server.port')} + '/authorization'}">
+    ВЫХОД
+</a>
+
+
+<br>
+<br>
+<br>
+<table class="mainTable">
+    <tr>
+        <th class="header">Личная информация</th>
+        <th class="header">Уведомления</th>
+    </tr> <!--ряд с ячейками заголовков-->
+    <tr>
+        <td class="whiteBorder">
+            <br>
+            <form action="Куда отправляем на проверку ФИО?">
+
+                <table>
+                    <tr>
+                        <td class="textRight">Фамилия</td>
+                        <td><input type="text" class="blueInput" size="40" name="lastName" placeholder="Иванов"></td>
+                    </tr>
+                    <tr>
+                        <td class="textRight">Имя</td>
+                        <td><input type="text" class="blueInput" size="40" name="firstName" placeholder="Иван"></td>
+                    </tr>
+                    <tr>
+                        <td class="textRight">Отчество</td>
+                        <td><input type="text" class="blueInput" size="40" name="fatherName" placeholder="Иванович">
+                        </td>
+                    </tr>
+                </table>
+
+                <br>
+
+                <div class="textCenter"><input type="submit" class="greyButton" value="Отправить на проверку"></div>
+            </form>
+            <br>
+        </td>
+        <td class="whiteBorder">
+            <form action="Кнопка Сохранить">
+                <input type="checkbox" class="textLeft" id="sendMeEmail" name="sendMeEmail">
+                <label for="sendMeEmail">Отправлять мне уведомления по электронной почте</label>
+                <br>
+                <input type="checkbox" class="textLeft" id="sendMeSMS" name="sendMeSMS">
+                <label for="sendMeSMS">Отправлять мне уведомления по номеру телефона</label>
+
+
+        </td>
+    </tr>
+    <tr>
+        <td class="whiteBorder">
+            <table>
+                <tr>
+                    <td class="textRight">Логин</td>
+                    <td><input type="text" class="blueInput" size="40" name="login" placeholder="ivanov@gmail.com"></td>
+                </tr>
+                <tr>
+                    <td class="textRight">Новый пароль</td>
+                    <td><input type="text" class="blueInput" size="40" name="newPassword" placeholder="*******"></td>
+                </tr>
+                <tr>
+                    <td class="textRight">Старый пароль</td>
+                    <td><input type="text" class="blueInput" size="40" name="oldPassword" placeholder="*******"></td>
+                </tr>
+            </table>
+        </td>
+        <td class="whiteBorder">
+            <div class="padding">Информация о себе (интересы,увлечения)
+                <br><br>
+                <textarea class="blueInput" rows="4" cols="45" name="selfInfo"></textarea>
+            </div>
+            <div class="padding">
+                <div>Выбранные категории:</div>
+                <select name="categories" size="5" multiple>
+                    <option selected value="s1">IT</option>
+                    <option value="s2">Физика</option>
+                    <option value="s3">Волонтёрство</option>
+                    <option value="s4">Иностранные языки</option>
+                    <option value="s5">Трудоустройство</option>
+                </select>
+            </div>
+
+            <div class="padding">
+                <div class="textRight"><input type="submit" class="greyButton" value="   Сохранить   "></div>
+            </div>
+        </td>
+    </tr>
+    </form>
+</table>
+</body>
+</html>

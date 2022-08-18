@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Страница студента</title>
     <link rel="stylesheet" th:href="@{/css/student_calendar.css}"/>
@@ -38,7 +38,14 @@
 
             <img alt="acc" th:src="@{/images/student_main_page/man 1.svg/}" class="account__icon">
 
-            </img>
+            <a th:href="${'http://localhost:' + {@environment.getProperty('server.port')} + '/student/settings'}">
+                Настройки
+            </a>
+
+            <a th:href="${'http://localhost:' + {@environment.getProperty('server.port')} + '/authorization'}">
+                ВЫХОД
+            </a>
+
         </div>
     </div>
     <div class="main-page__content">

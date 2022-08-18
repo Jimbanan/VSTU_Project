@@ -48,6 +48,14 @@
             <img alt="acc" th:src="@{/images/student_main_page/man 1.svg/}" class="account__icon">
         </div>
 
+        <a th:href="${'http://localhost:' + {@environment.getProperty('server.port')} + '/student/settings'}">
+            Настройки
+        </a>
+
+        <a th:href="${'http://localhost:' + {@environment.getProperty('server.port')} + '/authorization'}">
+            ВЫХОД
+        </a>
+
 
     </div>
     <div class="main-page__content">

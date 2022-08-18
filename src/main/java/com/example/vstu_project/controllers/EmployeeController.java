@@ -50,4 +50,10 @@ public class EmployeeController {
     }
 
 
+    @RequestMapping("/settings")
+    public String settingsPage(@ModelAttribute("UserIDRegistrationController") Long id, Model model) {
+        return "employee_settings";
+    }
+
+
 }

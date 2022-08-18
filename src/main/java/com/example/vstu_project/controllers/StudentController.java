@@ -35,4 +35,9 @@ public class StudentController {
         return "student_calendar";
     }
 
+    @RequestMapping("/settings")
+    public String settingsPage(@ModelAttribute("UserIDRegistrationController") Long id, Model model) {
+        return "student_settings";
+    }
+
 }

@@ -37,6 +37,14 @@
     </a>
     <div class="account__name" th:text="${fullNameUser}"/>
 
+    <a th:href="${'http://localhost:' + {@environment.getProperty('server.port')} + '/employee/settings'}">
+        Настройки
+    </a>
+
+    <a th:href="${'http://localhost:' + {@environment.getProperty('server.port')} + '/authorization'}">
+        ВЫХОД
+    </a>
+
 </div>
 <br>
 <br>
