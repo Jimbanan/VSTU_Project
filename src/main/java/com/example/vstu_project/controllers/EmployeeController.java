@@ -1,11 +1,14 @@
 package com.example.vstu_project.controllers;
 
+import com.example.vstu_project.entity.Courses;
 import com.example.vstu_project.services.EmployeeServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.SessionAttributes;
+
+import java.util.List;
 
 @Controller
 @SessionAttributes(value = "UserIDRegistrationController")

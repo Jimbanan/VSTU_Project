@@ -17,7 +17,7 @@ public class StudentCourse {
     private Long id;
 
     @Column
-    private String studentCourse;
+    private String number_course;
 
     //------------------------------------FOREIGN ENTITIES
     @OneToOne(cascade = {CascadeType.ALL}, optional = false, mappedBy = "studentCourse")

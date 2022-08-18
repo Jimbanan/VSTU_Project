@@ -23,7 +23,7 @@ databaseChangeLog:
                   name: place
                   type: VARCHAR(255)
               - column:
-                  name: studentCourse_id
+                  name: student_course_id
                   type: BIGINT
             tableName: courses
 
@@ -32,7 +32,7 @@ databaseChangeLog:
       author: Jimbanan
       changes:
         - addUniqueConstraint:
-            columnNames: studentCourse_id
+            columnNames: student_course_id
             constraintName: uk_studentCourse_id_courses
             tableName: courses
 
@@ -41,7 +41,7 @@ databaseChangeLog:
       author: Jimbanan
       changes:
         - addForeignKeyConstraint:
-            baseColumnNames: studentCourse_id
+            baseColumnNames: student_course_id
             baseTableName: courses
             constraintName: fk4rk7bs85wnbdicf6yr2g1m066
             deferrable: false
@@ -69,7 +69,7 @@ databaseChangeLog:
                   name: name
                   value: "Investigation of the flow"
               - column:
-                  name: studentCourse_id
+                  name: student_course_id
                   value: 12
         - insert:
             tableName: courses
@@ -84,7 +84,7 @@ databaseChangeLog:
                   name: name
                   value: "Competitive selection for the"
               - column:
-                  name: studentCourse_id
+                  name: student_course_id
                   value: 9
         - insert:
             tableName: courses
@@ -99,7 +99,7 @@ databaseChangeLog:
                   name: name
                   value: "Integrator's day"
               - column:
-                  name: studentCourse_id
+                  name: student_course_id
                   value: 5
         - insert:
             tableName: courses
@@ -114,7 +114,7 @@ databaseChangeLog:
                   name: name
                   value: "Conference Digital Socialism"
               - column:
-                  name: studentCourse_id
+                  name: student_course_id
                   value: 7
         - insert:
             tableName: courses
@@ -129,7 +129,7 @@ databaseChangeLog:
                   name: name
                   value: "TON Svet"
               - column:
-                  name: studentCourse_id
+                  name: student_course_id
                   value: 6
         - insert:
             tableName: courses
@@ -144,7 +144,7 @@ databaseChangeLog:
                   name: name
                   value: "School of Management for En"
               - column:
-                  name: studentCourse_id
+                  name: student_course_id
                   value: 3
         - insert:
             tableName: courses
@@ -159,7 +159,7 @@ databaseChangeLog:
                   name: name
                   value: "Speech trainingHow to speak"
               - column:
-                  name: studentCourse_id
+                  name: student_course_id
                   value: 14
         - insert:
             tableName: courses
@@ -174,7 +174,7 @@ databaseChangeLog:
                   name: name
                   value: "They don't go to IT for"
               - column:
-                  name: studentCourse_id
+                  name: student_course_id
                   value: 13
         - insert:
             tableName: courses
@@ -189,5 +189,5 @@ databaseChangeLog:
                   name: name
                   value: "Expert conference NTI Autonet"
               - column:
-                  name: studentCourse_id
+                  name: student_course_id
                   value: 1
