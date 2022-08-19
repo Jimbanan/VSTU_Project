@@ -40,32 +40,37 @@
 
                 <div class="wrap-input100 validate-input">
                     <input class="input100" type="text" name="surname" th:field="*{surname}" id="signup-surname"
-                           placeholder="Введите фамилию">
+                           placeholder="Введите фамилию" required>
+                    <td th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">ERROR</td>
                     <span class="focus-input100" data-placeholder="Surname"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input">
                     <input class="input100" type="text" name="name" th:field="*{name}" id="signup-name"
-                           placeholder="Введите имя">
+                           placeholder="Введите имя" required>
+                    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">ERROR</td>
                     <span class="focus-input100" data-placeholder="Name"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input">
                     <input class="input100" type="text" name="patronymic" th:field="*{patronymic}"
                            id="signup-patronymic"
-                           placeholder="Введите отчество">
+                           placeholder="Введите отчество" required>
+                    <td th:if="${#fields.hasErrors('patronymic')}" th:errors="*{patronymic}">ERROR</td>
                     <span class="focus-input100" data-placeholder="Patronymic"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input">
                     <input class="input100" type="text" name="email" th:field="*{email}" id="signup-email"
-                           placeholder="Введите email">
+                           placeholder="Введите email" required>
+                    <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">ERROR</td>
                     <span class="focus-input100" data-placeholder="Email"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input">
                     <input class="input100" type="password" name="password" th:field="*{password}" id="signup-password"
-                           placeholder="Введите пароль">
+                           placeholder="Введите пароль" required>
+                    <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">ERROR</td>
                     <span class="focus-input100" data-placeholder="Password"></span>
                 </div>
 
