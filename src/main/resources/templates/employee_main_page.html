@@ -111,7 +111,8 @@
 
                         </div>
                         <div class="event_right-section">
-                            <img class="right-section__image" th:src="@{/images/employee_main_page/java.png/}" alt="">
+                            <div th:text="${course.image}"></div>
+                            <img class="right-section__image" th:src="@{'/images/images_for_courses/' + ${course.image} + '/'}" alt="">
                             <button class="right-section__button">редактировать</button>
                         </div>
                     </div>

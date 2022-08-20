@@ -23,6 +23,9 @@ databaseChangeLog:
                   name: place
                   type: VARCHAR(255)
               - column:
+                  name: image
+                  type: VARCHAR(255)
+              - column:
                   name: student_course_id
                   type: BIGINT
             tableName: courses
@@ -61,13 +64,16 @@ databaseChangeLog:
             columns:
               - column:
                   name: date_time
-                  value: 2022-08-18 20:20:20.000000
+                  value: 2022-09-18 20:20:20.000000
               - column:
                   name: place
                   value: "st. Lenina, 88"
               - column:
                   name: name
                   value: "Investigation of the flow"
+              - column:
+                  name: image
+                  value: "img.png"
               - column:
                   name: student_course_id
                   value: 12
@@ -76,13 +82,16 @@ databaseChangeLog:
             columns:
               - column:
                   name: date_time
-                  value: 2022-08-18 20:20:20.000000
+                  value: 2022-09-18 20:20:20.000000
               - column:
                   name: place
                   value: "Gagarin street, 22"
               - column:
                   name: name
                   value: "Competitive selection for the"
+              - column:
+                  name: image
+                  value: "img_1.png"
               - column:
                   name: student_course_id
                   value: 9
@@ -91,13 +100,16 @@ databaseChangeLog:
             columns:
               - column:
                   name: date_time
-                  value: 2022-08-21 20:20:20.000000
+                  value: 2022-09-21 20:20:20.000000
               - column:
                   name: place
                   value: "pr. Lomonosov, 23"
               - column:
                   name: name
                   value: "Integrator's day"
+              - column:
+                  name: image
+                  value: "img_2.png"
               - column:
                   name: student_course_id
                   value: 5
@@ -106,13 +118,16 @@ databaseChangeLog:
             columns:
               - column:
                   name: date_time
-                  value: 2022-08-22 20:20:20.000000
+                  value: 2022-09-22 20:20:20.000000
               - column:
                   name: place
                   value: "Emb. Glory, 85"
               - column:
                   name: name
                   value: "Conference Digital Socialism"
+              - column:
+                  name: image
+                  value: "img_3.png"
               - column:
                   name: student_course_id
                   value: 7
@@ -121,13 +136,16 @@ databaseChangeLog:
             columns:
               - column:
                   name: date_time
-                  value: 2022-08-24 20:20:20.000000
+                  value: 2022-09-24 20:20:20.000000
               - column:
                   name: place
                   value: "pr. Cosmonauts, 11"
               - column:
                   name: name
                   value: "TON Svet"
+              - column:
+                  name: image
+                  value: "img_4.png"
               - column:
                   name: student_course_id
                   value: 6
@@ -136,13 +154,16 @@ databaseChangeLog:
             columns:
               - column:
                   name: date_time
-                  value: 2022-08-27 20:20:20.000000
+                  value: 2022-09-27 20:20:20.000000
               - column:
                   name: place
                   value: "Proezd Kosior, 56"
               - column:
                   name: name
                   value: "School of Management for En"
+              - column:
+                  name: image
+                  value: "img_5.png"
               - column:
                   name: student_course_id
                   value: 3
@@ -151,13 +172,16 @@ databaseChangeLog:
             columns:
               - column:
                   name: date_time
-                  value: 2022-08-28 20:20:20.000000
+                  value: 2022-09-28 20:20:20.000000
               - column:
                   name: place
                   value: "Balkanskaya street, 86"
               - column:
                   name: name
                   value: "Speech trainingHow to speak"
+              - column:
+                  name: image
+                  value: "img_3.png"
               - column:
                   name: student_course_id
                   value: 14
@@ -166,13 +190,16 @@ databaseChangeLog:
             columns:
               - column:
                   name: date_time
-                  value: 2022-08-30 20:20:20.000000
+                  value: 2022-09-30 20:20:20.000000
               - column:
                   name: place
                   value: "St. Domodedovskaya, 55"
               - column:
                   name: name
                   value: "They don't go to IT for"
+              - column:
+                  name: image
+                  value: "java.png"
               - column:
                   name: student_course_id
                   value: 13
@@ -181,13 +208,16 @@ databaseChangeLog:
             columns:
               - column:
                   name: date_time
-                  value: 2022-08-31 20:20:20.000000
+                  value: 2022-09-31 20:20:20.000000
               - column:
                   name: place
                   value: "pr. Cosmonauts, 56"
               - column:
                   name: name
                   value: "Expert conference NTI Autonet"
+              - column:
+                  name: image
+                  value: "img_5.png"
               - column:
                   name: student_course_id
                   value: 1

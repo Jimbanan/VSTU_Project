@@ -38,7 +38,7 @@ public class Courses implements Comparable<Courses> {
     @Column
     private String place;
 
-//    private Image image;
+    private String image;
 
     @Override
     public int compareTo(Courses o) {
