@@ -38,6 +38,8 @@ public class EmployeeController {
 
         model.addAttribute("fullNameUser", employeeService.getFullName(id));
 
+        model.addAttribute("courses", employeeService.getAllCourses());//Получение всех курсов
+
         return "employee_lists_of_participants";
     }
 
@@ -46,12 +48,20 @@ public class EmployeeController {
 
         model.addAttribute("fullNameUser", employeeService.getFullName(id));
 
+        model.addAttribute("courses", employeeService.getAllCourses());//Получение всех курсов
+
+
         return "employee_event_management";
     }
 
 
     @RequestMapping("/settings")
     public String settingsPage(@ModelAttribute("UserIDRegistrationController") Long id, Model model) {
+
+        model.addAttribute("fullNameUser", employeeService.getFullName(id));
+
+        model.addAttribute("userData", employeeService.getUser(id));
+
         return "employee_settings";
     }
 

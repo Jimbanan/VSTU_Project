@@ -73,29 +73,36 @@
                     <option value="">3</option>
                 </select>
             </div>
+
             <div class="content__events">
                 <div class="events__title">
                     <div class="empty-section"></div>
                     <div class="middle-section--title">НАЗВАНИЕ КУРСА</div>
                     <button class="end-section--title">Добавить курс</button>
                 </div>
-                <div class="event">
-                    <div class="events__title">
-                        <div class="empty-section"></div>
-                        <div class="middle-section">
-                            <div class="middle-section__text">Java-разработка</div>
-                        </div>
-                        <div class="end-section">
-                            <button class="event__button"><img th:src="@{/images/employee_event_management/delete.svg/}"
-                                                               alt=""></button>
-                            <button class="event__button"><img th:src="@{/images/employee_event_management/pen.svg/}"
-                                                               alt=""></button>
-                            <button class="event__button"><img
-                                    th:src="@{/images/employee_event_management/peoples.svg/}"
-                                    alt=""></button>
+
+                <th:block th:each="course : ${courses}">
+
+                    <div class="event">
+                        <div class="events__title">
+                            <div class="empty-section"></div>
+                            <div class="middle-section">
+                                <div class="middle-section__text" th:utext="${course.getName()}"/>
+                            </div>
+                            <div class="end-section">
+                                <button class="event__button"><img
+                                        th:src="@{/images/employee_event_management/delete.svg/}"
+                                        alt=""></button>
+                                <button class="event__button"><img
+                                        th:src="@{/images/employee_event_management/pen.svg/}"
+                                        alt=""></button>
+                                <button class="event__button"><img
+                                        th:src="@{/images/employee_event_management/peoples.svg/}"
+                                        alt=""></button>
+                            </div>
                         </div>
                     </div>
-                </div>
+                </th:block>
             </div>
 
         </div>

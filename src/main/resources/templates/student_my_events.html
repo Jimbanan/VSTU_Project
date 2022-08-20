@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Мои мероприятия</title>
+    <link rel="stylesheet" th:href="@{/css/student_my_events.css}"/>
+    <script type="text/javascript" th:src="@{/js/student_my_events.js}"></script>
+    <link href="https://allfont.ru/allfont.css?fonts=sansation-light" rel="stylesheet" type="text/css"/>
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<th th:with="arrdess=${#httpServletRequest.getServerName}">
+
+    <div class="main-page__container">
+        <div class="main-page__header">
+            <div class="main-page__tabs">
+
+                <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/student/main'}">
+                    <div class="main-page__tab">
+                        <img class="header__icon" th:src="@{/images/student_my_events/apps 1.svg/}" alt="icon">
+                        Мероприятия
+                    </div>
+                </a>
+
+                <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/student/calendar'}">
+                    <div class="main-page__tab">
+                        <img class="header__icon" th:src="@{/images/student_my_events/calendar 1.svg/}" alt="icon">
+                        Календарь
+                    </div>
+                </a>
+
+            </div>
+
+
+            <div class="header__vertical-line"></div>
+            <div class="header__account">
+                <div class="account__name" th:text="${fullNameUser}">
+                    <div class="dropdown" style="float:right;"> <!--Todo-->
+                        <button class="dropbtn">Справа</button>
+                        <div class="dropdown-content">
+                            <a href="http://localhost:8081/student/calendar">Ссылка 1</a>
+                            <a href="#">Ссылка 2</a>
+                            <a href="#">Ссылка 3</a>
+                        </div>
+                    </div>
+                </div>
+                <img alt="acc" th:src="@{/images/student_my_events/man 1.svg/}" class="account__icon">
+            </div>
+
+            <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/student/my_events'}">
+                Мои мероприятия
+            </a>
+
+            <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/student/settings'}">
+                Настройки
+            </a>
+
+            <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/authorization'}">
+                ВЫХОД
+            </a>
+
+
+        </div>
+        <div class="main-page__content">
+            <div class="content__search">
+                <div class="search__text">поиск</div>
+                <input type="text" class="search__input-search">
+                <img th:src="@{/images/student_my_events/search 1.svg/}" alt="" class="search__icon-search">
+                <div class="search__text">фильтр</div>
+                <select name="" class="search__filter" id="">
+                    <option value="">1</option>
+                    <option value="">2</option>
+                    <option value="">3</option>
+                </select>
+            </div>
+            <div class="content__events">
+                <div class="content__event">
+
+                    <div class="event_left-section">
+                        <div class="left-section__title">
+                            JAVA-разработка
+                        </div>
+                        <div class="left-section__content">
+                            <div class="left-section__section">
+                                <div class="section__title">
+                                    Категории:
+                                </div>
+                                <div class="section__content">
+                                    <div class="category">
+                                        программирование
+                                    </div>
+                                    <div class="category">
+                                        JAVA
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="left-section__section">
+                                <div class="section__title">
+                                    Курс:
+                                </div>
+                                <div class="section__content">
+                                    1-3
+                                </div>
+                            </div>
+                            <div class="left-section__section">
+                                <div class="section__title">
+                                    Дата и место проведения:
+                                </div>
+                                <div class="section__content--date">
+                                    20-Летия Октября, 84
+                                    12.12.2021 14:00
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                    <div class="event_right-section">
+                        <div class="status">
+                            <div class="section__content--status">
+                                <div class="section__content">
+                                    <div class="section__title">
+                                        Статус:
+                                    </div>
+                                    <div class="category--green">
+                                        ОДОБРЕНО
+                                    </div>
+                                </div>
+                                <div style="margin-top: 35px;"></div>
+                                <div class="section__content">
+                                    <div class="section__title">
+                                        Нажмите для увеличения
+                                    </div>
+                                    <div class="section__content">
+                                        <img class="header__icon"
+                                             th:src="@{/images/student_my_events/qr.svg/}" alt="icon">
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <img class="right-section__image" th:src="@{/images/student_my_events/java.png/}" alt="">
+                        <button class="right-section__button">отменить запись</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</th>
+
+</body>
+</html>

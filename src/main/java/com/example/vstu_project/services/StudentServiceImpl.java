@@ -1,8 +1,15 @@
 package com.example.vstu_project.services;
 
+import com.example.vstu_project.entity.Courses;
 import com.example.vstu_project.entity.Users;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @Service
@@ -10,6 +17,8 @@ import org.springframework.stereotype.Service;
 public class StudentServiceImpl implements StudentService {
 
     private final UsersServicesImpl usersServices;
+
+    private final CoursesServiceImpl coursesService;
 
     public StringBuffer getFullName(Long id) {
 
@@ -25,4 +34,16 @@ public class StudentServiceImpl implements StudentService {
                 .append(".");
     }
 
+    public List<Courses> getAllCourses() {
+        return coursesService.getAllCourses()
+                .stream()
+                .sorted(Comparator.comparing(Courses::getDateTime)
+                        .thenComparing(Courses::getName))
+                .filter(courses -> courses.getDateTime().isAfter(LocalDateTime.now()))
+                .collect(Collectors.toCollection(ArrayList::new));
+    }
+
+    public Users getUser(Long id) {
+        return usersServices.findUserById(id);
+    }
 }

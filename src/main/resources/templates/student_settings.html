@@ -28,7 +28,7 @@
 
     <div class="account__name" th:text="${fullNameUser}"/>
 
-    <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/student/myEvents'}">
+    <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/student/my_events'}">
         Мои мероприятия
     </a>
 
@@ -57,16 +57,19 @@
                     <table>
                         <tr>
                             <td class="textRight">Фамилия</td>
-                            <td><input type="text" class="blueInput" size="40" name="lastName" placeholder="Иванов">
+                            <td><input type="text" class="blueInput" size="40" name="lastName"
+                                       th:placeholder="${userData.getSurname()}">
                             </td>
                         </tr>
                         <tr>
                             <td class="textRight">Имя</td>
-                            <td><input type="text" class="blueInput" size="40" name="firstName" placeholder="Иван"></td>
+                            <td><input type="text" class="blueInput" size="40" name="firstName"
+                                       th:placeholder="${userData.getName()}"></td>
                         </tr>
                         <tr>
                             <td class="textRight">Отчество</td>
-                            <td><input type="text" class="blueInput" size="40" name="fatherName" placeholder="Иванович">
+                            <td><input type="text" class="blueInput" size="40" name="fatherName"
+                                       th:placeholder="${userData.getPatronymic()}">
                             </td>
                         </tr>
                     </table>
@@ -93,7 +96,8 @@
                 <table>
                     <tr>
                         <td class="textRight">Логин</td>
-                        <td><input type="text" class="blueInput" size="40" name="login" placeholder="ivanov@gmail.com">
+                        <td><input type="text" class="blueInput" size="40" name="login"
+                                   th:placeholder="${userData.getEmail()}">
                         </td>
                     </tr>
                     <tr>

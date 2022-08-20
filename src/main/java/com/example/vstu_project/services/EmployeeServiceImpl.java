@@ -42,4 +42,8 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     }
 
+    public Users getUser(Long id) {
+        return usersServices.findUserById(id);
+    }
+
 }
