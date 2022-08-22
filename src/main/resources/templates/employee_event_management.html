@@ -83,25 +83,28 @@
 
                 <th:block th:each="course : ${courses}">
 
-                    <div class="event">
-                        <div class="events__title">
-                            <div class="empty-section"></div>
-                            <div class="middle-section">
-                                <div class="middle-section__text" th:utext="${course.getName()}"/>
-                            </div>
-                            <div class="end-section">
-                                <button class="event__button"><img
-                                        th:src="@{/images/employee_event_management/delete.svg/}"
-                                        alt=""></button>
-                                <button class="event__button"><img
-                                        th:src="@{/images/employee_event_management/pen.svg/}"
-                                        alt=""></button>
-                                <button class="event__button"><img
-                                        th:src="@{/images/employee_event_management/peoples.svg/}"
-                                        alt=""></button>
+
+                    <form method="post">
+                        <div class="event">
+                            <div class="events__title">
+                                <div class="empty-section"></div>
+                                <div class="middle-section">
+                                    <div class="middle-section__text" th:utext="${course.getName()}"/>
+                                </div>
+                                <div class="end-section">
+                                    <button class="event__button" type="submit" name="delete"
+                                            th:formaction="'/employee/event_management/' + ${course.getId() + '/deleteCourse'}">
+                                        <img th:src="@{/images/employee_event_management/delete.svg/}" alt=""></button>
+                                    <button class="event__button"><img
+                                            th:src="@{/images/employee_event_management/pen.svg/}"
+                                            alt=""></button>
+                                    <button class="event__button"><img
+                                            th:src="@{/images/employee_event_management/peoples.svg/}"
+                                            alt=""></button>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                    </form>
                 </th:block>
             </div>
 

@@ -8,4 +8,5 @@ public interface CoursesService {
 
     List<Courses> getAllCourses();
 
+    void delete(Long id);
 }

@@ -13,8 +13,13 @@ public class CoursesServiceImpl implements CoursesService {
 
     private final CoursesRepository coursesRepository;
 
-    public List<Courses> getAllCourses(){
+    public List<Courses> getAllCourses() {
         return coursesRepository.findAll();
+    }
+
+    @Override
+    public void delete(Long id) {
+        coursesRepository.deleteById(id);
     }
 
 }

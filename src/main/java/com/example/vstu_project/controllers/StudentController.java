@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 @RequestMapping("/student")
 public class StudentController {
 
+    //TODO - Проверить структуру папок при импорте изображений для каждого html
     private final StudentServiceImpl studentService;
 
     public StudentController(StudentServiceImpl studentService) {

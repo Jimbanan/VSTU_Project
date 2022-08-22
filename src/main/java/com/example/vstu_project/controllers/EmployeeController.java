@@ -4,9 +4,7 @@ import com.example.vstu_project.entity.Courses;
 import com.example.vstu_project.services.EmployeeServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.SessionAttributes;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -63,6 +61,15 @@ public class EmployeeController {
         model.addAttribute("userData", employeeService.getUser(id));
 
         return "employee_settings";
+    }
+
+
+    @RequestMapping(value = "/event_management/{id}/deleteCourse", method = RequestMethod.POST)
+    public String delete(@PathVariable(value = "id") Long id) {
+
+        employeeService.deleteCourses(id);
+
+        return "redirect:/employee/event_management";
     }
 
 

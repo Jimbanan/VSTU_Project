@@ -10,4 +10,6 @@ public interface EmployeeService {
 
     List<Courses> getAllCourses();
 
+    void deleteCourses(Long id);
+
 }

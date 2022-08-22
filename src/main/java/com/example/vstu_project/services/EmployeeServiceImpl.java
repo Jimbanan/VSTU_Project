@@ -46,4 +46,7 @@ public class EmployeeServiceImpl implements EmployeeService {
         return usersServices.findUserById(id);
     }
 
+    public void deleteCourses(Long id) {
+        coursesService.delete(id);
+    }
 }
