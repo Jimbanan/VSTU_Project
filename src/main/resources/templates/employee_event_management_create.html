@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link href="https://allfont.ru/allfont.css?fonts=sansation-light" rel="stylesheet" type="text/css"/>
+</head>
+<body>
+
+<th th:with="arrdess=${#httpServletRequest.getServerName}">
+
+    <div class="main-page__container">
+        <div class="main-page__header">
+            <div class="main-page__tabs">
+
+                <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/employee/main'}">
+                    <div class="main-page__tab">
+                        <img class="header__icon" th:src="@{/images/employee_event_management/apps 1.svg/}" alt="icon">
+                        Мероприятия
+                    </div>
+                </a>
+
+                <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/employee/lists_of_participants'}">
+                    <div class="main-page__tab">
+                        <img class="header__icon" th:src="@{/images/employee_event_management/list 1.svg/}" alt="icon">
+                        Списки участников
+                    </div>
+                </a>
+
+                <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/employee/event_management'}">
+                    <div class="main-page__tab">
+                        <img class="header__icon" th:src="@{/images/employee_event_management/edit 1.svg/}" alt="icon">
+                        Управление мероприятиями
+                    </div>
+                </a>
+            </div>
+            <div class="header__vertical-line"></div>
+            <div class="header__account">
+
+                <div class="account__name" th:text="${fullNameUser}"/>
+
+                <img alt="acc" th:src="@{/images/employee_main_page/man 1.svg/}" class="account__icon">
+            </div>
+
+            <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/employee/settings'}">
+                Настройки
+            </a>
+
+            <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/authorization'}">
+                ВЫХОД
+            </a>
+
+        </div>
+
+        <div class="editpage-title">УПРАВЛЕНИЕ МЕРОПРИЯТИЯМИ</div>
+        <div class="main-page__content">
+
+            <div class="content__events">
+
+                <form th:method="POST" th:action="@{/employee/create}" th:object="${newCourse}">
+
+                    <input class="input100" type="text" name="name" th:field="*{name}" id="name"
+                           placeholder="Введите название курса" required>
+
+
+                    <p><input type="submit" value="Добавить курс" id="create-send"></p>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    </div>
+</th>
+</body>
+</html>

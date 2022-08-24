@@ -9,4 +9,6 @@ public interface CoursesService {
     List<Courses> getAllCourses();
 
     void delete(Long id);
+
+    void create(Courses course);
 }

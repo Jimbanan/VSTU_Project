@@ -5,6 +5,7 @@ import com.example.vstu_project.repositories.CoursesRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 @Service
@@ -20,6 +21,19 @@ public class CoursesServiceImpl implements CoursesService {
     @Override
     public void delete(Long id) {
         coursesRepository.deleteById(id);
+    }
+
+    @Override
+    public void create(Courses course) {
+
+        //TODO - Доделать (Сделать репозиторий для StudentCourse для временной заглушки)
+        course.setPlace("TEST");
+        course.setDateTime(LocalDateTime.now().plusDays(10));
+        course.setImage("img.png");
+        course.setStudentCourse(null);
+        course.setCategories(null);
+
+        coursesRepository.save(course);
     }
 
 }

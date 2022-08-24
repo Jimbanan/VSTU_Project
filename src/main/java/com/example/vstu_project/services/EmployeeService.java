@@ -12,4 +12,5 @@ public interface EmployeeService {
 
     void deleteCourses(Long id);
 
+    void createCourse(Courses course);
 }

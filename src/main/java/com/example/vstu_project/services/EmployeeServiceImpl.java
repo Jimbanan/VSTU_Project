@@ -49,4 +49,9 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void deleteCourses(Long id) {
         coursesService.delete(id);
     }
+
+    @Override
+    public void createCourse(Courses course) {
+        coursesService.create(course);
+    }
 }

@@ -78,7 +78,7 @@
                 <div class="events__title">
                     <div class="empty-section"></div>
                     <div class="middle-section--title">НАЗВАНИЕ КУРСА</div>
-                    <button class="end-section--title">Добавить курс</button>
+                    <a class="end-section--title" th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/employee/event_management/create'}">Добавить курс</a>
                 </div>
 
                 <th:block th:each="course : ${courses}">
