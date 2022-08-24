@@ -68,6 +68,40 @@
                     <input class="input100" type="text" name="name" th:field="*{name}" id="name"
                            placeholder="Введите название курса" required>
 
+                    <br>
+
+                    <input class="input100" type="text" name="place" th:field="*{place}" id="place"
+                           placeholder="Введите адрес проведения" required>
+
+                    <br>
+
+                    <input class="input100" type="datetime-local" name="date_time" th:field="*{dateTime}" id="date_time"
+                           placeholder="Введите дату и время" required>
+
+                    <br>
+
+                    <div>Изображение</div>
+
+                    <br>
+
+                    <select name="student" th:object="${student}">
+                        <option th:each="student : ${T(com.example.vstu_project.enums.StudentCourse).values()}"
+                                th:value="${student}" th:text="${student.displayValue}"></option>
+                    </select>
+
+                    <br>
+
+                    <input class="input100" type="text" name="info" th:field="*{info}" id="info"
+                           placeholder="Введите описание мероприятия" required>
+
+                    <br>
+
+                    <input class="input100" type="text" name="lecturerInformation" th:field="*{lecturerInformation}" id="lecturerInformation"
+                           placeholder="Введите информацию о лекторе" required>
+
+                    <br>
+
+                    <div>Категории</div>
 
                     <p><input type="submit" value="Добавить курс" id="create-send"></p>
 

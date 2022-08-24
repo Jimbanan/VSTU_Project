@@ -1,12 +1,11 @@
 package com.example.vstu_project.controllers;
 
 import com.example.vstu_project.entity.Courses;
+import com.example.vstu_project.enums.StudentCourse;
 import com.example.vstu_project.services.EmployeeServiceImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
-
-import java.util.List;
 
 @Controller
 @SessionAttributes(value = "UserIDRegistrationController")
@@ -63,10 +62,9 @@ public class EmployeeController {
     }
 
     @RequestMapping(value = "create", method = RequestMethod.POST)
-    public String create( @ModelAttribute(value = "newCourse") Courses course) {
+    public String create(@ModelAttribute(value = "newCourse") Courses course, @ModelAttribute(value = "student") StudentCourse studentCourse) {
 
-
-
+        course.setStudentCourse(studentCourse.getDisplayValue());
         employeeService.createCourse(course);
 
         return "redirect:/employee/event_management";

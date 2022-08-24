@@ -1,6 +1,7 @@
 package com.example.vstu_project.services;
 
 import com.example.vstu_project.entity.Courses;
+//import com.example.vstu_project.entity.StudentCourse;
 import com.example.vstu_project.entity.Users;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -17,6 +18,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
     private final UsersServicesImpl usersServices;
     private final CoursesServiceImpl coursesService;
+//    private final StudentCourseServiceImpl studentCourseService;
 
     public StringBuffer getFullName(Long id) {
 
@@ -54,4 +56,10 @@ public class EmployeeServiceImpl implements EmployeeService {
     public void createCourse(Courses course) {
         coursesService.create(course);
     }
+
+//    @Override
+//    public StudentCourse getStudentCourse(String number_course) {
+//        return studentCourseService.findStudentCourse(number_course);
+//    }
+
 }

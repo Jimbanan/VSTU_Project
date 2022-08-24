@@ -1,6 +1,7 @@
 package com.example.vstu_project.services;
 
 import com.example.vstu_project.entity.Courses;
+//import com.example.vstu_project.entity.StudentCourse;
 
 import java.util.List;
 
@@ -13,4 +14,7 @@ public interface EmployeeService {
     void deleteCourses(Long id);
 
     void createCourse(Courses course);
+
+//    StudentCourse getStudentCourse(String number_course);
+
 }
