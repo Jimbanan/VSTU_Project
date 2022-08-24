@@ -3,7 +3,7 @@ body{
     font-family: 'Montserrat', sans-serif;
     background-image: url("background.jpg");
     background-repeat: no-repeat;
-    
+
 }
 
 .mainTable{
@@ -11,71 +11,71 @@ body{
     margin-left: 20%;
     background-color: rgba(198, 204, 211, 0.39);
     border-collapse: collapse;
-    
+
 }
 .mainTable td {
-	overflow:hidden;
+    overflow:hidden;
 }
 .mainTable td:nth-of-type(1) {
-	width:5%;
+    width:5%;
 }
 .mainTable td:nth-of-type(2) {
-	width:40%;
+    width:40%;
 }
 .mainTable td:nth-of-type(3) {
-	width:5%;
+    width:5%;
 }
 
 
 .inputTable{
     width: 60%;
     margin-left: 20%;
-    
+
     border-collapse: collapse;
-   
+
 }
 .inputTable td:nth-of-type(1) {
-	width:35%;
+    width:35%;
 }
 .inputTable td:nth-of-type(2) {
-	width:25%;
+    width:25%;
 }
 
 .mainHeader{
     background: #ffffffa2;
     height: 46px;
-    
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);  
-    
-    
+
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+
+
 
 }
 
 .whiteBorder {
     border: 2px solid white;
-    
-   
-    
- }
+
+
+
+}
 
 
 .blueInput {
-    
+
     font-family: 'Montserrat', sans-serif;
     color: black;
     font-size: large;
     text-decoration: none;
     border-radius: 8px;
     border: 1px solid rgba(148, 186, 203, 1);
-    
+
     background: white;
     text-align:center;
-    
-    
+
+
     transition: 0.2s;
-    } 
-    .blueInput:hover { border: 1px solid rgb(116, 211, 255);}
-    
+}
+.blueInput:hover { border: 1px solid rgb(116, 211, 255);}
+
 
 .header{
     font-size: x-large;
@@ -91,15 +91,15 @@ body{
 }
 
 .participantsListHeader{
-    
+
     font-size: xxx-large;
-    
+
     text-align: center;
     color: #8E9EA5;
 }
 
 .blueInputSelect {
-    
+
     font-family: 'Montserrat', sans-serif;
     color: black;
     font-size: large;
@@ -109,21 +109,21 @@ body{
     width: 80%;
     background: white;
     text-align:center;
-    
-    
+
+
     transition: 0.2s;
-    } 
+}
 .blueInputSelect:hover { border: 1px solid rgb(116, 211, 255);}
 
 .divList{
-    margin:auto;  
-    text-align: center;   
+    margin:auto;
+    text-align: center;
 }
 
 ul.pagination li {
     list-style-type: none;
     display: inline;
-    
+
 
 }
 
@@ -141,9 +141,9 @@ ul.pagination li a.active {
     color: white;
 }
 
-         /* Если имя класса неактивно и указатель мыши проходит над стилем отображения */
+/* Если имя класса неактивно и указатель мыши проходит над стилем отображения */
 ul.pagination li a:hover:not(.active) {
     background: rgba(155, 193, 211, 0.56);
     border: 1px solid rgba(150, 188, 205, 1);
-    
+
 }
