@@ -3,9 +3,18 @@ package com.example.vstu_project.controllers;
 import com.example.vstu_project.entity.Courses;
 import com.example.vstu_project.enums.StudentCourse;
 import com.example.vstu_project.services.EmployeeServiceImpl;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.util.StringUtils;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
+import java.nio.file.StandardCopyOption;
 
 @Controller
 @SessionAttributes(value = "UserIDRegistrationController")
@@ -56,15 +65,21 @@ public class EmployeeController {
 
         model.addAttribute("fullNameUser", employeeService.getFullName(id));
 
+        //TODO
+
         model.addAttribute("newCourse", new Courses());
 
         return "employee_event_management_create";
     }
 
     @RequestMapping(value = "create", method = RequestMethod.POST)
-    public String create(@ModelAttribute(value = "newCourse") Courses course, @ModelAttribute(value = "student") StudentCourse studentCourse) {
+    public String create(@ModelAttribute(value = "newCourse") Courses course, @ModelAttribute(value = "student") StudentCourse studentCourse,
+                         @RequestParam("file") MultipartFile file) {
 
         course.setStudentCourse(studentCourse.getDisplayValue());
+
+        course.setImage(employeeService.uploadFile(file));
+
         employeeService.createCourse(course);
 
         return "redirect:/employee/event_management";

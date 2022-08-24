@@ -63,7 +63,7 @@
 
             <div class="content__events">
 
-                <form th:method="POST" th:action="@{/employee/create}" th:object="${newCourse}">
+                <form  enctype="multipart/form-data" th:method="POST" th:action="@{/employee/create}" th:object="${newCourse}">
 
                     <input class="input100" type="text" name="name" th:field="*{name}" id="name"
                            placeholder="Введите название курса" required>
@@ -81,6 +81,7 @@
                     <br>
 
                     <div>Изображение</div>
+                    <input type="file" name="file" th:object="${file}" id="file">
 
                     <br>
 
@@ -96,7 +97,8 @@
 
                     <br>
 
-                    <input class="input100" type="text" name="lecturerInformation" th:field="*{lecturerInformation}" id="lecturerInformation"
+                    <input class="input100" type="text" name="lecturerInformation" th:field="*{lecturerInformation}"
+                           id="lecturerInformation"
                            placeholder="Введите информацию о лекторе" required>
 
                     <br>

@@ -27,7 +27,6 @@ public class CoursesServiceImpl implements CoursesService {
     public void create(Courses course) {
 
         //TODO - Доделать (Сделать репозиторий для StudentCourse для временной заглушки)
-        course.setImage("img.png");
         course.setCategories(null);
 
         coursesRepository.save(course);
