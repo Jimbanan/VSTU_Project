@@ -9,6 +9,7 @@ import org.springframework.format.annotation.DateTimeFormat;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -53,4 +54,5 @@ public class Courses implements Comparable<Courses> {
     public int compareTo(Courses o) {
         return getDateTime().compareTo(o.getDateTime());
     }
+
 }

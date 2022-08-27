@@ -2,13 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" th:href="@{/css/employee_event_management.css}"/>
+    <link rel="stylesheet" th:href="@{/css/employee_event_create.css}"/>
     <script type="text/javascript" th:src="@{/js/employee_event_management.js}"></script>
     <link href="https://allfont.ru/allfont.css?fonts=sansation-light" rel="stylesheet" type="text/css"/>
     <style>
         a {
             text-decoration: none;
         }
+
     </style>
 </head>
 <body>
@@ -63,7 +64,8 @@
 
             <div class="content__events">
 
-                <form  enctype="multipart/form-data" th:method="POST" th:action="@{/employee/create}" th:object="${newCourse}">
+                <form enctype="multipart/form-data" th:method="POST" th:action="@{/employee/create}"
+                      th:object="${newCourse}">
 
                     <input class="input100" type="text" name="name" th:field="*{name}" id="name"
                            placeholder="Введите название курса" required>
@@ -104,6 +106,21 @@
                     <br>
 
                     <div>Категории</div>
+
+
+                    <th:block
+                            th:with="mycounter = ${counter.get()}, mycounter=${counter.incrementAndGet()}"
+                            th:each="categories : ${categories}"
+                            th:switch="${mycounter}">
+
+                        <br th:case="5" th:with="mycounter=${counter.clear()}">
+
+                        <input th:object="${categoriesCheckboxDTO}" th:case="*" type="checkbox"
+                               th:text="${categories}"
+                               th:field="*{categoriesArrayList}"
+                               th:value="${categories}">
+                    </th:block>
+
 
                     <p><input type="submit" value="Добавить курс" id="create-send"></p>
 

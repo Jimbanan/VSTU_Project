@@ -25,10 +25,6 @@ public class CoursesServiceImpl implements CoursesService {
 
     @Override
     public void create(Courses course) {
-
-        //TODO - Доделать (Сделать репозиторий для StudentCourse для временной заглушки)
-        course.setCategories(null);
-
         coursesRepository.save(course);
     }
 

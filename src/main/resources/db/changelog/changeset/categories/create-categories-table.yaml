@@ -1,6 +1,6 @@
 databaseChangeLog:
   - changeSet:
-      id: create-courses
+      id: create-categories
       author: Jimbanani
       changes:
         - createTable:

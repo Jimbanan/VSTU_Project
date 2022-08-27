@@ -1,0 +1,81 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-category
+      author: Jimbanani
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: category_pkey
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: category
+                  type: VARCHAR(255)
+            tableName: category
+
+  - changeSet:
+      id: insert-courses
+      author: Jimbanani
+      changes:
+        - insert:
+            tableName: category
+            columns:
+              - column:
+                  name: category
+                  value: Java
+              - column:
+                  name: category
+                  value: "Java"
+              - column:
+                  name: category
+                  value: "Python"
+              - column:
+                  name: category
+                  value: "C"
+              - column:
+                  name: category
+                  value: "Kotlin"
+              - column:
+                  name: category
+                  value: "Go"
+              - column:
+                  name: category
+                  value: "Gosu"
+              - column:
+                  name: category
+                  value: "Philosophy"
+              - column:
+                  name: category
+                  value: "Entertainment"
+              - column:
+                  name: category
+                  value: "Frontend"
+              - column:
+                  name: category
+                  value: "HTML"
+              - column:
+                  name: category
+                  value: "CSS"
+              - column:
+                  name: category
+                  value: "JavaScript"
+              - column:
+                  name: category
+                  value: "Backend"
+              - column:
+                  name: category
+                  value: "Docker"
+              - column:
+                  name: category
+                  value: "Kafka"
+              - column:
+                  name: category
+                  value: "Zookeeper"
+              - column:
+                  name: category
+                  value: "Liquibase"

@@ -27,16 +27,17 @@ public class ImageServiceImpl implements ImageService {
     @Value("${upload_dir}")
     private String UPLOAD_DIR;
 
+
     public String loadNewFile(MultipartFile file) {
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
-        Path path;
         try {
-            path = Paths.get(UPLOAD_DIR + fileName);
+            Path path = Paths.get(UPLOAD_DIR + fileName);
             Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
 
         } catch (IOException e) {
             e.printStackTrace();
         }
+
 
         return fileName;
     }

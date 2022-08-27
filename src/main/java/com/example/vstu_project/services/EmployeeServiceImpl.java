@@ -1,5 +1,7 @@
 package com.example.vstu_project.services;
 
+import com.example.vstu_project.dto.CategoriesCheckboxDTO;
+import com.example.vstu_project.entity.Categories;
 import com.example.vstu_project.entity.Courses;
 //import com.example.vstu_project.entity.StudentCourse;
 import com.example.vstu_project.entity.Users;
@@ -20,6 +22,7 @@ public class EmployeeServiceImpl implements EmployeeService {
     private final UsersServicesImpl usersServices;
     private final CoursesServiceImpl coursesService;
     private final ImageServiceImpl imageService;
+
 //    private final StudentCourseServiceImpl studentCourseService;
 
     public StringBuffer getFullName(Long id) {
@@ -55,8 +58,20 @@ public class EmployeeServiceImpl implements EmployeeService {
     }
 
     @Override
-    public void createCourse(Courses course) {
+    public void createCourse(Courses course, CategoriesCheckboxDTO categoriesCheckboxDTO) {
+
+        List<Categories> categoriesList = new ArrayList<>();
+
+        for (int i = 0; i < categoriesCheckboxDTO.getCategoriesArrayList().size(); i++) {
+            categoriesList.add(Categories.builder()
+                    .categories(categoriesCheckboxDTO.getCategoriesArrayList().get(i).toString())
+                    .build());
+        }
+
+        course.setCategories(categoriesList);
+
         coursesService.create(course);
+
     }
 
 //    @Override
