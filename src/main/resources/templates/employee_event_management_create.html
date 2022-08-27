@@ -116,9 +116,9 @@
                         <br th:case="5" th:with="mycounter=${counter.clear()}">
 
                         <input th:object="${categoriesCheckboxDTO}" th:case="*" type="checkbox"
-                               th:text="${categories}"
+                               th:text="${categories.getCategory()}"
                                th:field="*{categoriesArrayList}"
-                               th:value="${categories}">
+                               th:value="${categories.getCategory()}">
                     </th:block>
 
 

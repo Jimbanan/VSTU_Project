@@ -19,7 +19,7 @@ databaseChangeLog:
             tableName: category
 
   - changeSet:
-      id: insert-courses
+      id: insert-category
       author: Jimbanani
       changes:
         - insert:
@@ -27,55 +27,100 @@ databaseChangeLog:
             columns:
               - column:
                   name: category
-                  value: Java
-              - column:
-                  name: category
                   value: "Java"
+        - insert:
+            tableName: category
+            columns:
               - column:
                   name: category
                   value: "Python"
+        - insert:
+            tableName: category
+            columns:
               - column:
                   name: category
                   value: "C"
+        - insert:
+            tableName: category
+            columns:
               - column:
                   name: category
                   value: "Kotlin"
+        - insert:
+            tableName: category
+            columns:
               - column:
                   name: category
                   value: "Go"
+        - insert:
+            tableName: category
+            columns:
               - column:
                   name: category
                   value: "Gosu"
+        - insert:
+            tableName: category
+            columns:
               - column:
                   name: category
                   value: "Philosophy"
+        - insert:
+            tableName: category
+            columns:
               - column:
                   name: category
                   value: "Entertainment"
+        - insert:
+            tableName: category
+            columns:
               - column:
                   name: category
                   value: "Frontend"
+        - insert:
+            tableName: category
+            columns:
               - column:
                   name: category
                   value: "HTML"
+        - insert:
+            tableName: category
+            columns:
               - column:
                   name: category
                   value: "CSS"
+        - insert:
+            tableName: category
+            columns:
               - column:
                   name: category
                   value: "JavaScript"
+        - insert:
+            tableName: category
+            columns:
               - column:
                   name: category
                   value: "Backend"
+        - insert:
+            tableName: category
+            columns:
               - column:
                   name: category
                   value: "Docker"
+        - insert:
+            tableName: category
+            columns:
               - column:
                   name: category
                   value: "Kafka"
+        - insert:
+            tableName: category
+            columns:
               - column:
                   name: category
                   value: "Zookeeper"
+        - insert:
+            tableName: category
+            columns:
               - column:
                   name: category
                   value: "Liquibase"

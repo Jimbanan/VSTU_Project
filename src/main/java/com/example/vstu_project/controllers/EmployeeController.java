@@ -71,7 +71,7 @@ public class EmployeeController {
 
 
         model.addAttribute("categoriesCheckboxDTO", new CategoriesCheckboxDTO());
-        model.addAttribute("categories", Categories.values());
+        model.addAttribute("categories", employeeService.getAllCategory());
 
         return "employee_event_management_create";
     }
@@ -81,7 +81,6 @@ public class EmployeeController {
                          @ModelAttribute(value = "student") StudentCourse studentCourse,
                          @ModelAttribute(value = "categoriesCheckboxDTO") CategoriesCheckboxDTO categoriesCheckboxDTO,
                          @RequestParam("file") MultipartFile file) {
-
 
         course.setStudentCourse(studentCourse.getDisplayValue());
 
