@@ -1,5 +1,6 @@
 package com.example.vstu_project.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -19,11 +20,11 @@ public class Categories {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column
-//    @Enumerated(EnumType.STRING)
-//    private com.example.vstu_project.enums.Categories categories;
-//
-//    @Enumerated(EnumType.STRING)
-    private String categories;
+
+    //    @OneToOne(cascade = CascadeType.ALL, orphanRemoval = true, fetch = FetchType.LAZY)
+//    @JoinColumn(name = "allCategories_id")
+    @OneToOne(fetch = FetchType.LAZY, optional = false)
+    @JoinColumn(name = "allCategories_id", nullable = false)
+    private Category allCategories;
 
 }

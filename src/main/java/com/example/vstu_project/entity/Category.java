@@ -1,9 +1,6 @@
 package com.example.vstu_project.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import javax.persistence.*;
 
@@ -21,5 +18,16 @@ public class Category {
 
     @Column
     private String category;
+
+
+//    @OneToOne(mappedBy = "allCategories", cascade = CascadeType.ALL,
+//            fetch = FetchType.LAZY, orphanRemoval = true)
+//    @ToString.Exclude
+//    @EqualsAndHashCode.Exclude
+//@OneToOne(fetch = FetchType.LAZY,
+//        cascade =  CascadeType.ALL,
+//        mappedBy = "allCategories",
+//        orphanRemoval = true)
+//    public Categories allCategories;
 
 }

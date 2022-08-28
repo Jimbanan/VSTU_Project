@@ -16,6 +16,6 @@ import java.util.List;
 @AllArgsConstructor
 public class CategoriesCheckboxDTO {
 
-    List<String>  categoriesArrayList;
+    List<String> categoriesArrayList;
 
 }

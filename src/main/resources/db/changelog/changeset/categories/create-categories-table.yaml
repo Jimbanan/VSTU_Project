@@ -14,10 +14,10 @@ databaseChangeLog:
                   name: id
                   type: BIGINT
               - column:
-                  name: categories
-                  type: VARCHAR(255)
-              - column:
                   name: categories_id
+                  type: BIGINT
+              - column:
+                  name: all_categories_id
                   type: BIGINT
             tableName: categories
 
@@ -38,6 +38,22 @@ databaseChangeLog:
             validate: true
 
   - changeSet:
+      id: addForeignKeyConstraint-category
+      author: Jimbanan
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: all_categories_id
+            baseTableName: categories
+            constraintName: foreign_key_constraint_all_categories_id
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: NO ACTION
+            onUpdate: NO ACTION
+            referencedColumnNames: id
+            referencedTableName: category
+            validate: true
+
+  - changeSet:
       id: insert-courses
       author: Jimbanani
       changes:
@@ -45,8 +61,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: Java
+                  name: all_categories_id
+                  value: 4
               - column:
                   name: categories_id
                   value: 1
@@ -54,8 +70,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: C++
+                  name: all_categories_id
+                  value: 1
               - column:
                   name: categories_id
                   value: 1
@@ -63,8 +79,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: C++
+                  name: all_categories_id
+                  value: 2
               - column:
                   name: categories_id
                   value: 2
@@ -72,8 +88,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: Python
+                  name: all_categories_id
+                  value: 7
               - column:
                   name: categories_id
                   value: 3
@@ -81,8 +97,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: C
+                  name: all_categories_id
+                  value: 5
               - column:
                   name: categories_id
                   value: 3
@@ -90,8 +106,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: Java
+                  name: all_categories_id
+                  value: 2
               - column:
                   name: categories_id
                   value: 4
@@ -99,8 +115,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: Kotlin
+                  name: all_categories_id
+                  value: 16
               - column:
                   name: categories_id
                   value: 4
@@ -108,8 +124,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: Go
+                  name: all_categories_id
+                  value: 1
               - column:
                   name: categories_id
                   value: 4
@@ -117,8 +133,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: Gosu
+                  name: all_categories_id
+                  value: 12
               - column:
                   name: categories_id
                   value: 5
@@ -126,8 +142,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: Go
+                  name: all_categories_id
+                  value: 11
               - column:
                   name: categories_id
                   value: 5
@@ -135,8 +151,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: Kotlin
+                  name: all_categories_id
+                  value: 8
               - column:
                   name: categories_id
                   value: 5
@@ -144,8 +160,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: Philosophy
+                  name: all_categories_id
+                  value: 4
               - column:
                   name: categories_id
                   value: 6
@@ -153,8 +169,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: Entertainment
+                  name: all_categories_id
+                  value: 2
               - column:
                   name: categories_id
                   value: 6
@@ -162,8 +178,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: Frontend
+                  name: all_categories_id
+                  value: 5
               - column:
                   name: categories_id
                   value: 7
@@ -171,8 +187,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: HTML
+                  name: all_categories_id
+                  value: 2
               - column:
                   name: categories_id
                   value: 7
@@ -180,8 +196,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: CSS
+                  name: all_categories_id
+                  value: 6
               - column:
                   name: categories_id
                   value: 7
@@ -189,8 +205,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: JavaScript
+                  name: all_categories_id
+                  value: 9
               - column:
                   name: categories_id
                   value: 7
@@ -198,8 +214,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: Backend
+                  name: all_categories_id
+                  value: 2
               - column:
                   name: categories_id
                   value: 8
@@ -207,8 +223,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: Docker
+                  name: all_categories_id
+                  value: 14
               - column:
                   name: categories_id
                   value: 8
@@ -216,8 +232,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: Kafka
+                  name: all_categories_id
+                  value: 2
               - column:
                   name: categories_id
                   value: 9
@@ -225,8 +241,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: Zookeeper
+                  name: all_categories_id
+                  value: 3
               - column:
                   name: categories_id
                   value: 9
@@ -234,8 +250,8 @@ databaseChangeLog:
             tableName: categories
             columns:
               - column:
-                  name: categories
-                  value: Liquibase
+                  name: all_categories_id
+                  value: 1
               - column:
                   name: categories_id
                   value: 9

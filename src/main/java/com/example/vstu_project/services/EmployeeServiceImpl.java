@@ -67,7 +67,7 @@ public class EmployeeServiceImpl implements EmployeeService {
 
         for (int i = 0; i < categoriesCheckboxDTO.getCategoriesArrayList().size(); i++) {
             categoriesList.add(Categories.builder()
-                    .categories(categoriesCheckboxDTO.getCategoriesArrayList().get(i))
+                    .allCategories(categoryServices.getCategoryIdByCategory(categoriesCheckboxDTO.getCategoriesArrayList().get(i)))
                     .build());
         }
 

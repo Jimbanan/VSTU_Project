@@ -17,4 +17,8 @@ public class CategoryServicesImpl implements CategoryServices {
         return categoryRepository.findAll();
     }
 
+    public Category getCategoryIdByCategory(String category){
+        return categoryRepository.findByCategory(category);
+    }
+
 }
