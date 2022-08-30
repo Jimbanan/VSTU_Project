@@ -93,7 +93,9 @@
                                     </div>
                                     <div class="section__content">
                                         <th:block th:each="catetory : ${course.categories}">
-                                            <div class="category" th:utext="${catetory.categories}"/>
+                                            <th:block th:each="allCategory: ${catetory.allCategories}">
+                                                <div class="category" th:utext="${allCategory.category}"/>
+                                            </th:block>
                                         </th:block>
                                     </div>
                                 </div>

@@ -1,7 +1,6 @@
 package com.example.vstu_project.dto;
 
 import com.example.vstu_project.entity.Category;
-import com.example.vstu_project.enums.Categories;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

@@ -1,24 +1,18 @@
 package com.example.vstu_project.services;
 
 import lombok.RequiredArgsConstructor;
+import net.coobird.thumbnailator.Thumbnails;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
-import javax.imageio.ImageIO;
-import java.awt.*;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
-import java.util.HashMap;
-import java.util.Map;
 
 @Service
 @RequiredArgsConstructor
@@ -34,12 +28,18 @@ public class ImageServiceImpl implements ImageService {
             Path path = Paths.get(UPLOAD_DIR + fileName);
             Files.copy(file.getInputStream(), path, StandardCopyOption.REPLACE_EXISTING);
 
+            resizeImages(String.valueOf(path));
+
         } catch (IOException e) {
             e.printStackTrace();
         }
 
 
         return fileName;
+    }
+
+    private void resizeImages(String srcPath) throws IOException {
+        Thumbnails.of(srcPath).forceSize(300, 150).toFile(srcPath);
     }
 
 }

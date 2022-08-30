@@ -2,7 +2,6 @@ package com.example.vstu_project.controllers;
 
 import com.example.vstu_project.dto.CategoriesCheckboxDTO;
 import com.example.vstu_project.entity.Courses;
-import com.example.vstu_project.enums.Categories;
 import com.example.vstu_project.enums.StudentCourse;
 import com.example.vstu_project.services.Counter;
 import com.example.vstu_project.services.EmployeeServiceImpl;
