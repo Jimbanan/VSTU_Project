@@ -1,10 +1,9 @@
-package com.example.vstu_project.controllers;
+package com.example.vstu_project.controller;
 
 import com.example.vstu_project.dto.AuthorizationDTO;
 import com.example.vstu_project.entity.Users;
 import com.example.vstu_project.enums.Division;
 import com.example.vstu_project.services.AuthorizationServicesImpl;
-import com.example.vstu_project.services.MailSenderImpl;
 import com.example.vstu_project.services.RegistrationServicesImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,14 +23,10 @@ public class RegistrationController {
     private final RegistrationServicesImpl registrationServices;
     private final AuthorizationServicesImpl authorizationServices;
 
-    private final MailSenderImpl mailSender;
-
     public RegistrationController(RegistrationServicesImpl registrationServices,
-                                  AuthorizationServicesImpl authorizationServices,
-                                  MailSenderImpl mailSender) {
+                                  AuthorizationServicesImpl authorizationServices) {
         this.registrationServices = registrationServices;
         this.authorizationServices = authorizationServices;
-        this.mailSender = mailSender;
     }
 
     @GetMapping("/authorization")
@@ -92,15 +87,7 @@ public class RegistrationController {
 
         registrationServices.addUser(users);
 
-        StringBuilder sb = new StringBuilder();
-        sb.append("Здравствуйте!").append("\n")
-                .append(users.getName()).append(" ").append("вы успешно зарегистрировались на портале ВГТУ для отслеживания мероприятий").append("\n")
-                .append("Ваши данные для авторизации").append("\n")
-                .append("Логин: ").append(users.getEmail()).append("\n")
-                .append("Пароль: ").append(users.getPassword()).append("\n");
-
-        mailSender.sendEmail(users.getEmail(), "Регистрация успешно завершена", sb.toString());
-        //Todo - Отправка сообщения на почту об успешной регистрации
+        registrationServices.sendEmail(users);
 
         return "redirect:/authorization";
     }

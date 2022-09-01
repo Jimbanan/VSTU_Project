@@ -1,4 +1,4 @@
-package com.example.vstu_project.controllers;
+package com.example.vstu_project.controller;
 
 import com.example.vstu_project.services.StudentServiceImpl;
 import org.springframework.stereotype.Controller;
@@ -22,7 +22,7 @@ public class StudentController {
     @RequestMapping("/main")
     public String mainPage(@ModelAttribute("UserIDRegistrationController") Long id, Model model) {
 
-        model.addAttribute("fullNameUser", studentService.getFullName(id));
+        model.addAttribute("fullNameUser", studentService.getFullName(id));//Получение полного имени пользователя
 
         model.addAttribute("courses", studentService.getAllCourses());//Получение всех курсов
 
@@ -34,15 +34,11 @@ public class StudentController {
     @RequestMapping("/calendar")
     public String calendarPage(@ModelAttribute("UserIDRegistrationController") Long id, Model model) {
 
-//        model.addAttribute("fullNameUser", studentService.getFullName(id));
-
         return "student_calendar";
     }
 
     @RequestMapping("/my_events")
     public String myEventsPage(@ModelAttribute("UserIDRegistrationController") Long id, Model model) {
-
-//        model.addAttribute("fullNameUser", studentService.getFullName(id));
 
         return "student_my_events";
     }

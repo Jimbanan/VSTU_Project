@@ -4,7 +4,6 @@ import com.example.vstu_project.dto.CategoriesCheckboxDTO;
 import com.example.vstu_project.entity.Categories;
 import com.example.vstu_project.entity.Category;
 import com.example.vstu_project.entity.Courses;
-//import com.example.vstu_project.entity.StudentCourse;
 import com.example.vstu_project.entity.Users;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -25,8 +24,6 @@ public class EmployeeServiceImpl implements EmployeeService {
     private final ImageServiceImpl imageService;
 
     private final CategoryServicesImpl categoryServices;
-
-//    private final StudentCourseServiceImpl studentCourseService;
 
     public StringBuffer getFullName(Long id) {
 
@@ -76,11 +73,6 @@ public class EmployeeServiceImpl implements EmployeeService {
         coursesService.create(course);
 
     }
-
-//    @Override
-//    public StudentCourse getStudentCourse(String number_course) {
-//        return studentCourseService.findStudentCourse(number_course);
-//    }
 
     public String uploadFile(MultipartFile file) {
         return imageService.loadNewFile(file);

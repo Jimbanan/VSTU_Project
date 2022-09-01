@@ -1,4 +1,4 @@
-package com.example.vstu_project.controllers;
+package com.example.vstu_project.controller;
 
 import com.example.vstu_project.dto.CategoriesCheckboxDTO;
 import com.example.vstu_project.entity.Courses;
@@ -10,12 +10,8 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 
-
-import java.util.ArrayList;
-import java.util.List;
-
 @Controller
-@SessionAttributes(value = "UserIDRegistrationController")
+@SessionAttributes(value = {"UserIDRegistrationController", "fullNameUser"})
 @RequestMapping("/employee")
 public class EmployeeController {
 
@@ -40,8 +36,6 @@ public class EmployeeController {
     @RequestMapping("/lists_of_participants")
     public String listsOfParticipantsPage(@ModelAttribute("UserIDRegistrationController") Long id, Model model) {
 
-        model.addAttribute("fullNameUser", employeeService.getFullName(id));
-
         model.addAttribute("courses", employeeService.getAllCourses());//Получение всех курсов
 
         return "employee_lists_of_participants";
@@ -50,10 +44,7 @@ public class EmployeeController {
     @RequestMapping("/event_management")
     public String eventManagementPage(@ModelAttribute("UserIDRegistrationController") Long id, Model model) {
 
-        model.addAttribute("fullNameUser", employeeService.getFullName(id));
-
         model.addAttribute("courses", employeeService.getAllCourses());//Получение всех курсов
-
 
         return "employee_event_management";
     }
@@ -61,16 +52,11 @@ public class EmployeeController {
     @RequestMapping(value = "/event_management/create", method = RequestMethod.GET)
     public String employee_event_management_createPage(@ModelAttribute("UserIDRegistrationController") Long id, Model model) {
 
-        model.addAttribute("fullNameUser", employeeService.getFullName(id));
-
-        //TODO
-
-        model.addAttribute("newCourse", new Courses());
-        model.addAttribute("counter", new Counter());
-
+        model.addAttribute("newCourse", new Courses());//Добавление нового курса в модель
+        model.addAttribute("counter", new Counter());//Добавление счетчика в модель
 
         model.addAttribute("categoriesCheckboxDTO", new CategoriesCheckboxDTO());
-        model.addAttribute("categories", employeeService.getAllCategory());
+        model.addAttribute("categories", employeeService.getAllCategory());//Получение всех категорий
 
         return "employee_event_management_create";
     }
@@ -101,12 +87,9 @@ public class EmployeeController {
     @RequestMapping("/settings")
     public String settingsPage(@ModelAttribute("UserIDRegistrationController") Long id, Model model) {
 
-        model.addAttribute("fullNameUser", employeeService.getFullName(id));
-
         model.addAttribute("userData", employeeService.getUser(id));
 
         return "employee_settings";
     }
-
 
 }

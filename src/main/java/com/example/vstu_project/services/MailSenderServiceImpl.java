@@ -9,7 +9,10 @@ import org.springframework.stereotype.Service;
 
 @Service
 @Slf4j
-public class MailSenderImpl implements MailSender {
+public class MailSenderServiceImpl implements MailSenderService {
+
+    @Value("${spring.mail.username}")
+    private String emailFrom;
 
     @Autowired
     private JavaMailSender javaMailSender;
@@ -19,13 +22,12 @@ public class MailSenderImpl implements MailSender {
     @Override
     public void sendEmail(String to, String subject, String text) {
         SimpleMailMessage message = new SimpleMailMessage(templateMessage);
-        message.setFrom("vgtuevents@mail.ru");
+        message.setFrom(emailFrom);
         message.setTo(to);
         message.setSubject(subject);
         message.setText(text);
         javaMailSender.send(message);
         log.info("sendEmail() - void: Сообщение отправлено");
     }
-
 
 }

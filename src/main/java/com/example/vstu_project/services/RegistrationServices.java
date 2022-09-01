@@ -6,4 +6,5 @@ public interface RegistrationServices {
 
     void addUser(Users users);
 
+    void sendEmail(Users user);
 }

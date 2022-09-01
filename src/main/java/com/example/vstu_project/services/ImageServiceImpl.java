@@ -8,7 +8,6 @@ import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -20,7 +19,6 @@ public class ImageServiceImpl implements ImageService {
 
     @Value("${upload_dir}")
     private String UPLOAD_DIR;
-
 
     public String loadNewFile(MultipartFile file) {
         String fileName = StringUtils.cleanPath(file.getOriginalFilename());
