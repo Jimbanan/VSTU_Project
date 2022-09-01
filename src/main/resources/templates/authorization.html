@@ -30,11 +30,13 @@
                 <div class="wrap-input100 validate-input">
                     <input class="input100" type="text" name="email" th:field="*{email}" id="signup-name"
                            placeholder="логин">
+                    <span class="help-block" th:if="${#fields.hasErrors('email')}" th:errors="*{email}"></span>
                     <span class="focus-input100" data-placeholder="Email"></span>
                 </div>
                 <div class="wrap-input100 validate-input">
                     <input class="input100" type="text" name="pass" th:field="*{password}" id="signup-password"
                            placeholder="пароль">
+                    <span class="help-block" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></span>
                     <span class="focus-input100" data-placeholder="Password"></span>
                 </div>
                 <div class="flex-wrapper-two">

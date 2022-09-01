@@ -15,7 +15,6 @@
 
 <div class="h1container">
     <h1 style="color: var(--gold); margin-bottom: -5px"> Зарегистрируйтесь </h1>
-    <h1 style="font-size: 13px; color: var(--dim-gray)"> если вы сотрудник ВУЗа</h1>
 </div>
 
 <form class="avtorizacija" th:method="POST" th:action="@{/}" th:object="${user}">
@@ -28,12 +27,10 @@
         <div class="container-login100">
             <div class="wrap-login100">
                 <div class="wrap-input100 validate-input">
-                    <select class="input100" name="division" th:field="*{division}" id="signup-division">
-                        <option value="0">выберите подразделение</option>
+                    <select class="input100" name="division" th:field="*{division}" id="signup-division" required>
+                        <option value="" disabled selected>Выберите роль</option>
                         <option value="1">Студент</option>
-                        <option value="2">Деканат</option>
-                        <option value="3">Кафедра</option>
-                        <option value="4">Аспирантура</option>
+                        <option value="2">Сотрудник</option>
                     </select>
 
                 </div>

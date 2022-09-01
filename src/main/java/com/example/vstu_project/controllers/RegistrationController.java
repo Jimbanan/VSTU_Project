@@ -36,7 +36,7 @@ public class RegistrationController {
 
     @PostMapping("/authorization")
     public String findUser(@ModelAttribute("authorizationDTO") AuthorizationDTO authorizationDTO,
-                           final RedirectAttributes redirectAttributes) {
+                           final RedirectAttributes redirectAttributes, BindingResult bindingResult) {
 
         Users users = authorizationServices.findUser(authorizationDTO);
         if (users != null) {
@@ -48,11 +48,10 @@ public class RegistrationController {
                 return "redirect:/employee/main";
             }
         } else {
-            //TODO - Сделать вывод ошибки при отсутствующем аккаунте
-            return "redirect:/authorization";
+            bindingResult.rejectValue("email", "error.user", "Пользователь с такой почтой не найден");
+            bindingResult.rejectValue("password", "error.user", "Пользователь с таким паролем не найден");
+            return "authorization";
         }
-
-
     }
 
     @RequestMapping("/registration_employee")

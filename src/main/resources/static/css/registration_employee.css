@@ -274,3 +274,7 @@ body{
   --gold: #c3b294;
   --dark-blue: #263145;
 }
+
+option[value=""][disabled] {
+  display: none;
+}
