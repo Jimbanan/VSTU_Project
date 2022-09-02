@@ -1,0 +1,84 @@
+package com.example.vstu_project.services;
+
+import com.example.vstu_project.dto.CategoriesCheckboxDTO;
+import com.example.vstu_project.entity.Categories;
+import com.example.vstu_project.entity.Category;
+import com.example.vstu_project.entity.Courses;
+import com.example.vstu_project.entity.Users;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
+@Service
+@RequiredArgsConstructor
+public class EmployeeServiceImpl implements EmployeeService {
+
+    private final UsersServicesImpl usersServices;
+    private final CoursesServiceImpl coursesService;
+    private final ImageServiceImpl imageService;
+
+    private final CategoryServicesImpl categoryServices;
+
+    public StringBuffer getFullName(Long id) {
+
+        Users user = usersServices.findUserById(id);
+
+        StringBuffer fullName = new StringBuffer();
+
+        return fullName.append(user.getSurname())
+                .append(" ")
+                .append(user.getName().charAt(0))
+                .append(".")
+                .append(user.getPatronymic().charAt(0))
+                .append(".");
+    }
+
+    public List<Courses> getAllCourses() {
+        return coursesService.getAllCourses()
+                .stream()
+                .sorted(Comparator.comparing(Courses::getDateTime)
+                        .thenComparing(Courses::getName))
+                .filter(courses -> courses.getDateTime().isAfter(LocalDateTime.now()))
+                .collect(Collectors.toCollection(ArrayList::new));
+
+    }
+
+    public Users getUser(Long id) {
+        return usersServices.findUserById(id);
+    }
+
+    public void deleteCourses(Long id) {
+        coursesService.delete(id);
+    }
+
+    @Override
+    public void createCourse(Courses course, CategoriesCheckboxDTO categoriesCheckboxDTO) {
+
+        List<Categories> categoriesList = new ArrayList<>();
+
+        for (int i = 0; i < categoriesCheckboxDTO.getCategoriesArrayList().size(); i++) {
+            categoriesList.add(Categories.builder()
+                    .allCategories(categoryServices.getCategoryIdByCategory(categoriesCheckboxDTO.getCategoriesArrayList().get(i)))
+                    .build());
+        }
+
+        course.setCategories(categoriesList);
+
+        coursesService.create(course);
+
+    }
+
+    public String uploadFile(MultipartFile file) {
+        return imageService.loadNewFile(file);
+    }
+
+    public List<Category> getAllCategory() {
+        return categoryServices.getAllCategory();
+    }
+}

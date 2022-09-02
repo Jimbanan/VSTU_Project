@@ -1,0 +1,283 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-courses
+      author: Jimbanani
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: courses_pkey
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: date_time
+                  type: TIMESTAMP WITHOUT TIME ZONE
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: place
+                  type: VARCHAR(255)
+              - column:
+                  name: image
+                  type: VARCHAR(255)
+              - column:
+                  name: student_course
+                  type: VARCHAR(255)
+              - column:
+                  name: info
+                  type: VARCHAR(255)
+              - column:
+                  name: lecturer_information
+                  type: VARCHAR(255)
+            tableName: courses
+
+  #  - changeSet:
+  #      id: addUniqueConstraint-courses
+  #      author: Jimbanan
+  #      changes:
+  #        - addUniqueConstraint:
+  #            columnNames: student_course_id
+  #            constraintName: uk_studentCourse_id_courses
+  #            tableName: courses
+  #
+  #  - changeSet:
+  #      id: addForeignKeyConstraint-courses
+  #      author: Jimbanan
+  #      changes:
+  #        - addForeignKeyConstraint:
+  #            baseColumnNames: student_course_id
+  #            baseTableName: courses
+  #            constraintName: fk4rk7bs85wnbdicf6yr2g1m066
+  #            deferrable: false
+  #            initiallyDeferred: false
+  #            onDelete: NO ACTION
+  #            onUpdate: NO ACTION
+  #            referencedColumnNames: id
+  #            referencedTableName: student_course
+  #            validate: true
+
+  - changeSet:
+      id: insert-courses
+      author: Jimbanani
+      changes:
+        - insert:
+            tableName: courses
+            columns:
+              - column:
+                  name: date_time
+                  value: 2022-09-18 20:20:20.000000
+              - column:
+                  name: place
+                  value: "st. Lenina, 88"
+              - column:
+                  name: name
+                  value: "Investigation of the flow"
+              - column:
+                  name: image
+                  value: "img.png"
+              - column:
+                  name: student_course
+                  value: "1"
+              - column:
+                  name: info
+                  value: "Информация для курса номер 1"
+              - column:
+                  name: lecturer_information
+                  value: "Информация о лекторе для курса номер 1"
+        - insert:
+            tableName: courses
+            columns:
+              - column:
+                  name: date_time
+                  value: 2022-09-18 20:20:20.000000
+              - column:
+                  name: place
+                  value: "Gagarin street, 22"
+              - column:
+                  name: name
+                  value: "Competitive selection for the"
+              - column:
+                  name: image
+                  value: "img_1.png"
+              - column:
+                  name: student_course
+                  value: "1-2"
+              - column:
+                  name: info
+                  value: "Информация для курса номер 2"
+              - column:
+                  name: lecturer_information
+                  value: "Информация о лекторе для курса номер 2"
+        - insert:
+            tableName: courses
+            columns:
+              - column:
+                  name: date_time
+                  value: 2022-09-21 20:20:20.000000
+              - column:
+                  name: place
+                  value: "pr. Lomonosov, 23"
+              - column:
+                  name: name
+                  value: "Integrator's day"
+              - column:
+                  name: image
+                  value: "img_2.png"
+              - column:
+                  name: student_course
+                  value: "1-3"
+              - column:
+                  name: info
+                  value: "Информация для курса номер 3"
+              - column:
+                  name: lecturer_information
+                  value: "Информация о лекторе для курса номер 3"
+        - insert:
+            tableName: courses
+            columns:
+              - column:
+                  name: date_time
+                  value: 2022-09-22 20:20:20.000000
+              - column:
+                  name: place
+                  value: "Emb. Glory, 85"
+              - column:
+                  name: name
+                  value: "Conference Digital Socialism"
+              - column:
+                  name: image
+                  value: "img_3.png"
+              - column:
+                  name: student_course
+                  value: "1-4"
+              - column:
+                  name: info
+                  value: "Информация для курса номер 4"
+              - column:
+                  name: lecturer_information
+                  value: "Информация о лекторе для курса номер 4"
+        - insert:
+            tableName: courses
+            columns:
+              - column:
+                  name: date_time
+                  value: 2022-09-24 20:20:20.000000
+              - column:
+                  name: place
+                  value: "pr. Cosmonauts, 11"
+              - column:
+                  name: name
+                  value: "TON Svet"
+              - column:
+                  name: image
+                  value: "img_4.png"
+              - column:
+                  name: student_course
+                  value: "1-5"
+              - column:
+                  name: info
+                  value: "Информация для курса номер 5"
+              - column:
+                  name: lecturer_information
+                  value: "Информация о лекторе для курса номер 5"
+        - insert:
+            tableName: courses
+            columns:
+              - column:
+                  name: date_time
+                  value: 2022-09-27 20:20:20.000000
+              - column:
+                  name: place
+                  value: "Proezd Kosior, 56"
+              - column:
+                  name: name
+                  value: "School of Management for En"
+              - column:
+                  name: image
+                  value: "img_5.png"
+              - column:
+                  name: student_course
+                  value: "2"
+              - column:
+                  name: info
+                  value: "Информация для курса номер 6"
+              - column:
+                  name: lecturer_information
+                  value: "Информация о лекторе для курса номер 6"
+        - insert:
+            tableName: courses
+            columns:
+              - column:
+                  name: date_time
+                  value: 2022-09-28 20:20:20.000000
+              - column:
+                  name: place
+                  value: "Balkanskaya street, 86"
+              - column:
+                  name: name
+                  value: "Speech trainingHow to speak"
+              - column:
+                  name: image
+                  value: "img_3.png"
+              - column:
+                  name: student_course
+                  value: "2-3"
+              - column:
+                  name: info
+                  value: "Информация для курса номер 7"
+              - column:
+                  name: lecturer_information
+                  value: "Информация о лекторе для курса номер 7"
+        - insert:
+            tableName: courses
+            columns:
+              - column:
+                  name: date_time
+                  value: 2022-09-30 20:20:20.000000
+              - column:
+                  name: place
+                  value: "St. Domodedovskaya, 55"
+              - column:
+                  name: name
+                  value: "They don't go to IT for"
+              - column:
+                  name: image
+                  value: "java.png"
+              - column:
+                  name: student_course
+                  value: "2-4"
+              - column:
+                  name: info
+                  value: "Информация для курса номер 8"
+              - column:
+                  name: lecturer_information
+                  value: "Информация о лекторе для курса номер 8"
+        - insert:
+            tableName: courses
+            columns:
+              - column:
+                  name: date_time
+                  value: 2022-09-31 20:20:20.000000
+              - column:
+                  name: place
+                  value: "pr. Cosmonauts, 56"
+              - column:
+                  name: name
+                  value: "Expert conference NTI Autonet"
+              - column:
+                  name: image
+                  value: "img_5.png"
+              - column:
+                  name: student_course
+                  value: "2-5"
+              - column:
+                  name: info
+                  value: "Информация для курса номер 9"
+              - column:
+                  name: lecturer_information
+                  value: "Информация о лекторе для курса номер 9"

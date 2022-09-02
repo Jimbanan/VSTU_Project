@@ -1,6 +1,7 @@
-function pageOpenAuthorization() {
+function pageOpenAuthorization(port) {
     const result = confirm("Вы хотите отменить регистрацию?");
     if (result) {
-        window.location.href = "http://localhost:8080/authorization"
+        const url = 'http://' + location.hostname + ':' + port + "/authorization";
+        window.location.href = url
     }
 }

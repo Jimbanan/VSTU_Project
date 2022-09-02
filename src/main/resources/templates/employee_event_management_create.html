@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" th:href="@{/css/employee_event_create.css}"/>
+    <script type="text/javascript" th:src="@{/js/employee_event_management.js}"></script>
+    <link href="https://allfont.ru/allfont.css?fonts=sansation-light" rel="stylesheet" type="text/css"/>
+    <style>
+        a {
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+
+<th th:with="arrdess=${#httpServletRequest.getServerName}">
+
+    <div class="main-page__container">
+        <div class="main-page__header">
+            <div class="main-page__tabs">
+
+                <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/employee/main'}">
+                    <div class="main-page__tab">
+                        <img class="header__icon" th:src="@{/images/employee_event_management/apps 1.svg/}" alt="icon">
+                        Мероприятия
+                    </div>
+                </a>
+
+                <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/employee/lists_of_participants'}">
+                    <div class="main-page__tab">
+                        <img class="header__icon" th:src="@{/images/employee_event_management/list 1.svg/}" alt="icon">
+                        Списки участников
+                    </div>
+                </a>
+
+                <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/employee/event_management'}">
+                    <div class="main-page__tab">
+                        <img class="header__icon" th:src="@{/images/employee_event_management/edit 1.svg/}" alt="icon">
+                        Управление мероприятиями
+                    </div>
+                </a>
+            </div>
+            <div class="header__vertical-line"></div>
+            <div class="header__account">
+
+                <div class="account__name" th:text="${fullNameUser}"/>
+
+                <img alt="acc" th:src="@{/images/employee_main_page/man 1.svg/}" class="account__icon">
+            </div>
+
+            <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/employee/settings'}">
+                Настройки
+            </a>
+
+            <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/authorization'}">
+                ВЫХОД
+            </a>
+
+        </div>
+
+        <div class="editpage-title">СОЗДАНИЕ КУРСА</div>
+        <div class="main-page__content">
+
+            <div class="content__events">
+
+                <form enctype="multipart/form-data" th:method="POST" th:action="@{/employee/create}"
+                      th:object="${newCourse}">
+
+                    <input class="input100" type="text" name="name" th:field="*{name}" id="name"
+                           placeholder="Введите название курса" required>
+
+                    <br>
+
+                    <input class="input100" type="text" name="place" th:field="*{place}" id="place"
+                           placeholder="Введите адрес проведения" required>
+
+                    <br>
+
+                    <input class="input100" type="datetime-local" name="date_time" th:field="*{dateTime}" id="date_time"
+                           placeholder="Введите дату и время" required>
+
+                    <br>
+
+                    <div>Изображение</div>
+                    <input type="file" name="file" th:object="${file}" id="file">
+
+                    <br>
+
+                    <select name="student" th:object="${student}">
+                        <option th:each="student : ${T(com.example.vstu_project.enums.StudentCourse).values()}"
+                                th:value="${student}" th:text="${student.displayValue}"></option>
+                    </select>
+
+                    <br>
+
+                    <input class="input100" type="text" name="info" th:field="*{info}" id="info"
+                           placeholder="Введите описание мероприятия" required>
+
+                    <br>
+
+                    <input class="input100" type="text" name="lecturerInformation" th:field="*{lecturerInformation}"
+                           id="lecturerInformation"
+                           placeholder="Введите информацию о лекторе" required>
+
+                    <br>
+
+                    <div>Категории</div>
+
+
+                    <th:block
+                            th:with="mycounter = ${counter.get()}, mycounter=${counter.incrementAndGet()}"
+                            th:each="categories : ${categories}"
+                            th:switch="${mycounter}">
+
+                        <br th:case="5" th:with="mycounter=${counter.clear()}">
+
+                        <input th:object="${categoriesCheckboxDTO}" th:case="*" type="checkbox"
+                               th:text="${categories.getCategory()}"
+                               th:field="*{categoriesArrayList}"
+                               th:value="${categories.getCategory()}">
+                    </th:block>
+
+
+                    <p><input type="submit" value="Добавить курс" id="create-send"></p>
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+    </div>
+    </div>
+</th>
+</body>
+</html>

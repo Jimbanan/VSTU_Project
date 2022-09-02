@@ -1,0 +1,81 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-users
+      author: Jimbanani
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: users_pkey
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: email
+                  type: VARCHAR(255)
+              - column:
+                  name: name
+                  type: VARCHAR(255)
+              - column:
+                  name: password
+                  type: VARCHAR(255)
+              - column:
+                  name: patronymic
+                  type: VARCHAR(255)
+              - column:
+                  name: surname
+                  type: VARCHAR(255)
+              - column:
+                  name: division
+                  type: VARCHAR(255)
+            tableName: users
+
+  - changeSet:
+      id: insert-courses
+      author: Jimbanani
+      changes:
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: email
+                  value: 1
+              - column:
+                  name: name
+                  value: Valentina
+              - column:
+                  name: password
+                  value: 1
+              - column:
+                  name: patronymic
+                  value: Alexandrovna
+              - column:
+                  name: surname
+                  value: Tevyants
+              - column:
+                  name: division
+                  value: "Deanery"
+        - insert:
+            tableName: users
+            columns:
+              - column:
+                  name: email
+                  value: 2
+              - column:
+                  name: name
+                  value: Nicholas
+              - column:
+                  name: password
+                  value: 2
+              - column:
+                  name: patronymic
+                  value: Nikolaevich
+              - column:
+                  name: surname
+                  value: Koziakov
+              - column:
+                  name: division
+                  value: "Student"

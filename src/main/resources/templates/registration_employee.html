@@ -15,7 +15,6 @@
 
 <div class="h1container">
     <h1 style="color: var(--gold); margin-bottom: -5px"> Зарегистрируйтесь </h1>
-    <h1 style="font-size: 13px; color: var(--dim-gray)"> если вы сотрудник ВУЗа</h1>
 </div>
 
 <form class="avtorizacija" th:method="POST" th:action="@{/}" th:object="${user}">
@@ -28,50 +27,56 @@
         <div class="container-login100">
             <div class="wrap-login100">
                 <div class="wrap-input100 validate-input">
-                    <select class="input100" name="division" th:field="*{division}" id="signup-division">
-                        <option value="0">выберите подразделение</option>
+                    <select class="input100" name="division" th:field="*{division}" id="signup-division" required>
+                        <option value="" disabled selected>Выберите роль</option>
                         <option value="1">Студент</option>
-                        <option value="2">Деканат</option>
-                        <option value="3">Кафедра</option>
-                        <option value="4">Аспирантура</option>
+                        <option value="2">Сотрудник</option>
                     </select>
 
                 </div>
 
                 <div class="wrap-input100 validate-input">
                     <input class="input100" type="text" name="surname" th:field="*{surname}" id="signup-surname"
-                           placeholder="Введите фамилию">
+                           placeholder="Введите фамилию" required>
+                    <td th:if="${#fields.hasErrors('surname')}" th:errors="*{surname}">ERROR</td>
                     <span class="focus-input100" data-placeholder="Surname"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input">
                     <input class="input100" type="text" name="name" th:field="*{name}" id="signup-name"
-                           placeholder="Введите имя">
+                           placeholder="Введите имя" required>
+                    <td th:if="${#fields.hasErrors('name')}" th:errors="*{name}">ERROR</td>
                     <span class="focus-input100" data-placeholder="Name"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input">
                     <input class="input100" type="text" name="patronymic" th:field="*{patronymic}"
                            id="signup-patronymic"
-                           placeholder="Введите отчество">
+                           placeholder="Введите отчество" required>
+                    <td th:if="${#fields.hasErrors('patronymic')}" th:errors="*{patronymic}">ERROR</td>
                     <span class="focus-input100" data-placeholder="Patronymic"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input">
                     <input class="input100" type="text" name="email" th:field="*{email}" id="signup-email"
-                           placeholder="Введите email">
+                           placeholder="Введите email" required>
+                    <td th:if="${#fields.hasErrors('email')}" th:errors="*{email}">ERROR</td>
                     <span class="focus-input100" data-placeholder="Email"></span>
                 </div>
 
                 <div class="wrap-input100 validate-input">
                     <input class="input100" type="password" name="password" th:field="*{password}" id="signup-password"
-                           placeholder="Введите пароль">
+                           placeholder="Введите пароль" required>
+                    <td th:if="${#fields.hasErrors('password')}" th:errors="*{password}">ERROR</td>
                     <span class="focus-input100" data-placeholder="Password"></span>
                 </div>
 
                 <div class="flex-wrapper-two">
-                    <p><input type="button" value="Назад" id="Cancel_button" class="b1label"
-                              th:onclick="pageOpenAuthorization()"></p>
+                    <p th:with="url=${@environment.getProperty('server.port')}"><input type="button" value="Назад"
+                                                                                       id="Cancel_button"
+                                                                                       class="b1label"
+                                                                                       th:attr="onclick=|pageOpenAuthorization('${url}')|">
+                    </p>
                     <p><input type="submit" value="Зарегистрироваться" id="login-send" class="reg-label"></p>
                 </div>
             </div>

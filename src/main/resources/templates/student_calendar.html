@@ -1,115 +1,139 @@
 <!DOCTYPE html>
-<html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Страница студента</title>
     <link rel="stylesheet" th:href="@{/css/student_calendar.css}"/>
     <script type="text/javascript" th:src="@{/js/student_calendar.js}"></script>
-
     <link href="https://allfont.ru/allfont.css?fonts=sansation-light" rel="stylesheet" type="text/css"/>
+    <style>
+        a {
+            text-decoration: none;
+        }
+    </style>
 </head>
 <body>
-<div class="main-page__container">
-    <div class="main-page__header">
-        <div class="main-page__tabs">
-            <div class="main-page__tab"><img class="header__icon" th:src="@{/images/student_main_page/apps 1.svg/}"
-                                             alt="icon">
-                <p><input type="button" value="Мероприятия" id="calendar"
-                          th:onclick="pageOpenMain()"></p>
+
+<th th:with="arrdess=${#httpServletRequest.getServerName}">
+
+    <div class="main-page__container">
+        <div class="main-page__header">
+            <div class="main-page__tabs">
+
+                <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/student/main'}">
+                    <div class="main-page__tab">
+                        <img class="header__icon" th:src="@{/images/student_main_page/apps 1.svg/}" alt="icon">
+                        Мероприятия
+                    </div>
+                </a>
+
+                <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/student/calendar'}">
+                    <div class="main-page__tab">
+                        <img class="header__icon" th:src="@{/images/student_main_page/calendar 1.svg/}" alt="icon">
+                        Календарь
+                    </div>
+                </a>
+
             </div>
-            <div class="main-page__tab"><img class="header__icon" th:src="@{/images/student_main_page/calendar 1.svg/}" alt="icon">
-                <p><input type="button" value="календарь" id="main"
-                          th:onclick="pageOpenCalendar()"></p>
+            <div class="header__vertical-line"></div>
+            <div class="header__account">
+
+                <div class="account__name" th:text="${fullNameUser}"/>
+
+                <img alt="acc" th:src="@{/images/student_main_page/man 1.svg/}" class="account__icon">
+
+                <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/student/my_events'}">
+                    Мои мероприятия
+                </a>
+
+                <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/student/settings'}">
+                    Настройки
+                </a>
+
+                <a th:href="${'http://' + {arrdess} + ':' + {@environment.getProperty('server.port')} + '/authorization'}">
+                    ВЫХОД
+                </a>
+
             </div>
         </div>
-        <div class="header__vertical-line"></div>
-        <div class="header__account">
-            <div class="account__name">
-                Концевая Л.А.
+        <div class="main-page__content">
+            <div class="content__events">
+                <table>
+                    <tr>
+                        <th>январь</th>
+                        <th>февраль</th>
+                        <th>март</th>
+                        <th>апрель</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>запланировано: 0</p>
+                            <p>посещено: 0</p>
+                        </td>
+                        <td>
+                            <p>запланировано: 0</p>
+                            <p>посещено: 0</p>
+                        </td>
+                        <td>
+                            <p>запланировано: 0</p>
+                            <p>посещено: 0</p>
+                        </td>
+                        <td>
+                            <p>запланировано: 0</p>
+                            <p>посещено: 0</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>май</th>
+                        <th>июнь</th>
+                        <th>июль</th>
+                        <th>август</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>запланировано: 0</p>
+                            <p>посещено: 0</p>
+                        </td>
+                        <td>
+                            <p>запланировано: 0</p>
+                            <p>посещено: 0</p>
+                        </td>
+                        <td>
+                            <p>запланировано: 0</p>
+                            <p>посещено: 0</p>
+                        </td>
+                        <td>
+                            <p>запланировано: 0</p>
+                            <p>посещено: 0</p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>сентябрь</th>
+                        <th>октябрь</th>
+                        <th>ноябрь</th>
+                        <th>декабрь</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <p>запланировано: 0</p>
+                            <p>посещено: 0</p>
+                        </td>
+                        <td>
+                            <p>запланировано: 0</p>
+                            <p>посещено: 0</p>
+                        </td>
+                        <td>
+                            <p>запланировано: 0</p>
+                            <p>посещено: 0</p>
+                        </td>
+                        <td>
+                            <p>запланировано: 0</p>
+                            <p>посещено: 0</p>
+                        </td>
+                    </tr>
+                </table>
             </div>
-            <img alt="acc" th:src="@{/images/student_main_page/man 1.svg/}" class="account__icon">
-
-            </img>
         </div>
     </div>
-    <div class="main-page__content">
-        <div class="content__events">
-            <table>
-                <tr>
-                    <th>январь</th>
-                    <th>февраль</th>
-                    <th>март</th>
-                    <th>апрель</th>
-                </tr>
-                <tr>
-                    <td>
-                        <p>запланировано: 0</p>
-                        <p>посещено: 0</p>
-                    </td>
-                    <td>
-                        <p>запланировано: 0</p>
-                        <p>посещено: 0</p>
-                    </td>
-                    <td>
-                        <p>запланировано: 0</p>
-                        <p>посещено: 0</p>
-                    </td>
-                    <td>
-                        <p>запланировано: 0</p>
-                        <p>посещено: 0</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>май</th>
-                    <th>июнь</th>
-                    <th>июль</th>
-                    <th>август</th>
-                </tr>
-                <tr>
-                    <td>
-                        <p>запланировано: 0</p>
-                        <p>посещено: 0</p>
-                    </td>
-                    <td>
-                        <p>запланировано: 0</p>
-                        <p>посещено: 0</p>
-                    </td>
-                    <td>
-                        <p>запланировано: 0</p>
-                        <p>посещено: 0</p>
-                    </td>
-                    <td>
-                        <p>запланировано: 0</p>
-                        <p>посещено: 0</p>
-                    </td>
-                </tr>
-                <tr>
-                    <th>сентябрь</th>
-                    <th>октябрь</th>
-                    <th>ноябрь</th>
-                    <th>декабрь</th>
-                </tr>
-                <tr>
-                    <td>
-                        <p>запланировано: 0</p>
-                        <p>посещено: 0</p>
-                    </td>
-                    <td>
-                        <p>запланировано: 0</p>
-                        <p>посещено: 0</p>
-                    </td>
-                    <td>
-                        <p>запланировано: 0</p>
-                        <p>посещено: 0</p>
-                    </td>
-                    <td>
-                        <p>запланировано: 0</p>
-                        <p>посещено: 0</p>
-                    </td>
-                </tr>
-            </table>
-        </div>
-    </div>
-</div>
-
+</th>
 </body>
 </html>

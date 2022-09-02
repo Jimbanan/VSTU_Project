@@ -1,0 +1,257 @@
+databaseChangeLog:
+  - changeSet:
+      id: create-categories
+      author: Jimbanani
+      changes:
+        - createTable:
+            columns:
+              - column:
+                  autoIncrement: true
+                  constraints:
+                    nullable: false
+                    primaryKey: true
+                    primaryKeyName: categories_pkey
+                  name: id
+                  type: BIGINT
+              - column:
+                  name: categories_id
+                  type: BIGINT
+              - column:
+                  name: all_categories_id
+                  type: BIGINT
+            tableName: categories
+
+  - changeSet:
+      id: addForeignKeyConstraint-categories
+      author: Jimbanan
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: categories_id
+            baseTableName: categories
+            constraintName: fk6kpuhnc783a22ho4od110eha4
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: NO ACTION
+            onUpdate: NO ACTION
+            referencedColumnNames: id
+            referencedTableName: courses
+            validate: true
+
+  - changeSet:
+      id: addForeignKeyConstraint-category
+      author: Jimbanan
+      changes:
+        - addForeignKeyConstraint:
+            baseColumnNames: all_categories_id
+            baseTableName: categories
+            constraintName: foreign_key_constraint_all_categories_id
+            deferrable: false
+            initiallyDeferred: false
+            onDelete: NO ACTION
+            onUpdate: NO ACTION
+            referencedColumnNames: id
+            referencedTableName: category
+            validate: true
+
+  - changeSet:
+      id: insert-courses
+      author: Jimbanani
+      changes:
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 4
+              - column:
+                  name: categories_id
+                  value: 1
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 1
+              - column:
+                  name: categories_id
+                  value: 1
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 2
+              - column:
+                  name: categories_id
+                  value: 2
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 7
+              - column:
+                  name: categories_id
+                  value: 3
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 5
+              - column:
+                  name: categories_id
+                  value: 3
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 2
+              - column:
+                  name: categories_id
+                  value: 4
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 16
+              - column:
+                  name: categories_id
+                  value: 4
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 1
+              - column:
+                  name: categories_id
+                  value: 4
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 12
+              - column:
+                  name: categories_id
+                  value: 5
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 11
+              - column:
+                  name: categories_id
+                  value: 5
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 8
+              - column:
+                  name: categories_id
+                  value: 5
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 4
+              - column:
+                  name: categories_id
+                  value: 6
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 2
+              - column:
+                  name: categories_id
+                  value: 6
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 5
+              - column:
+                  name: categories_id
+                  value: 7
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 2
+              - column:
+                  name: categories_id
+                  value: 7
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 6
+              - column:
+                  name: categories_id
+                  value: 7
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 9
+              - column:
+                  name: categories_id
+                  value: 7
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 2
+              - column:
+                  name: categories_id
+                  value: 8
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 14
+              - column:
+                  name: categories_id
+                  value: 8
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 2
+              - column:
+                  name: categories_id
+                  value: 9
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 3
+              - column:
+                  name: categories_id
+                  value: 9
+        - insert:
+            tableName: categories
+            columns:
+              - column:
+                  name: all_categories_id
+                  value: 1
+              - column:
+                  name: categories_id
+                  value: 9

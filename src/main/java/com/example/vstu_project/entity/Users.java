@@ -1,12 +1,14 @@
 package com.example.vstu_project.entity;
 
-import com.example.vstu_project.enums.Division;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotEmpty;
+import javax.validation.constraints.Size;
 import java.util.List;
 
 @Data
@@ -22,18 +24,28 @@ public class Users {
     private Long id;
 
     @Column
+    @NotEmpty
+    @Size(min=6, max=30)
     private String surname;
 
     @Column
+    @NotEmpty
+    @Size(min=6, max=30)
     private String name;
 
     @Column
+    @NotEmpty
+    @Size(min=6, max=30)
     private String patronymic;
 
     @Column
+    @NotEmpty
+    @Email
     private String email;
 
     @Column
+    @NotEmpty
+    @Size(min=6, max=30)
     private String password;
 
     @Column

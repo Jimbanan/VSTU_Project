@@ -1,20 +1,21 @@
-package com.example.vstu_project.controllers;
+package com.example.vstu_project.controller;
 
 import com.example.vstu_project.dto.AuthorizationDTO;
 import com.example.vstu_project.entity.Users;
 import com.example.vstu_project.enums.Division;
-import com.example.vstu_project.enums.Roles;
 import com.example.vstu_project.services.AuthorizationServicesImpl;
 import com.example.vstu_project.services.RegistrationServicesImpl;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import java.util.ArrayList;
-import java.util.List;
+import javax.validation.Valid;
+
 
 @Controller
 public class RegistrationController {
@@ -22,7 +23,8 @@ public class RegistrationController {
     private final RegistrationServicesImpl registrationServices;
     private final AuthorizationServicesImpl authorizationServices;
 
-    public RegistrationController(RegistrationServicesImpl registrationServices, AuthorizationServicesImpl authorizationServices) {
+    public RegistrationController(RegistrationServicesImpl registrationServices,
+                                  AuthorizationServicesImpl authorizationServices) {
         this.registrationServices = registrationServices;
         this.authorizationServices = authorizationServices;
     }
@@ -34,22 +36,23 @@ public class RegistrationController {
     }
 
     @PostMapping("/authorization")
-    public String findUser(@ModelAttribute("authorizationDTO") AuthorizationDTO authorizationDTO) {
+    public String findUser(@ModelAttribute("authorizationDTO") AuthorizationDTO authorizationDTO,
+                           final RedirectAttributes redirectAttributes, BindingResult bindingResult) {
 
         Users users = authorizationServices.findUser(authorizationDTO);
-
         if (users != null) {
             if (users.getDivision().equals(Division.STUDENT.getDisplayValue())) {
+                redirectAttributes.addFlashAttribute("UserIDRegistrationController", users.getId());
                 return "redirect:/student/main";
             } else {
+                redirectAttributes.addFlashAttribute("UserIDRegistrationController", users.getId());
                 return "redirect:/employee/main";
             }
         } else {
-            //TODO - Сделать вывод ошибки при отсутствующем аккаунте
-            return "redirect:/authorization";
+            bindingResult.rejectValue("email", "error.user", "Пользователь с такой почтой не найден");
+            bindingResult.rejectValue("password", "error.user", "Пользователь с таким паролем не найден");
+            return "authorization";
         }
-
-
     }
 
     @RequestMapping("/registration_employee")
@@ -59,9 +62,12 @@ public class RegistrationController {
     }
 
     @PostMapping()
-    public String createUser(@ModelAttribute("user") Users users) {
+    public String createUser(@ModelAttribute("user") @Valid Users users, BindingResult bindingResult) {
 
-        System.out.println(users.getDivision());
+        if (bindingResult.hasErrors()) {
+            return "registration_employee";
+        }
+
         //TODO - сделать select в регистрации.html через таймлиф и enums
         switch (users.getDivision()) {
             case "1":
@@ -80,6 +86,9 @@ public class RegistrationController {
 
 
         registrationServices.addUser(users);
+
+        registrationServices.sendEmail(users);
+
         return "redirect:/authorization";
     }
 
