@@ -109,7 +109,7 @@
 
 
                     <th:block
-                            th:with="mycounter = ${counter.get()}, mycounter=${counter.incrementAndGet()}"
+                            th:with="mycounter = ${counter.getCount()}, mycounter=${counter.incrementAndGet()}"
                             th:each="categories : ${categories}"
                             th:switch="${mycounter}">
 
